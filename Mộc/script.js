@@ -1,33 +1,40 @@
-<script>
-      // Simple JavaScript for interactive elements
-      document.addEventListener("DOMContentLoaded", function () {
-        // Add to cart functionality
-        const addToCartButtons = document.querySelectorAll(".btn-primary");
-        const cartCount = document.querySelector(".cart-count");
+document.addEventListener("DOMContentLoaded", function () {
+  // Lấy tất cả các nút "Thêm vào giỏ hàng"
+  const addToCartButtons = document.querySelectorAll(".btn-primary");
+  const cartCount = document.querySelector(".cart-count");
 
-        addToCartButtons.forEach((button) => {
-          button.addEventListener("click", function (e) {
-            e.preventDefault();
-            let count = parseInt(cartCount.textContent);
-            cartCount.textContent = count + 1;
+  // Nếu có các nút thì thêm sự kiện click
+  addToCartButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
 
-            // Simple animation
-            this.textContent = "Added!";
-            setTimeout(() => {
-              this.textContent = "Add to Cart";
-            }, 1000);
-          });
-        });
+      // Lấy số lượng hiện tại trong giỏ
+      let count = parseInt(cartCount.textContent);
+      cartCount.textContent = count + 1; // Tăng 1 sản phẩm
 
-        // Newsletter form submission
-        const newsletterForm = document.querySelector(".newsletter-form");
-        newsletterForm.addEventListener("submit", function (e) {
-          e.preventDefault();
-          const emailInput = this.querySelector('input[type="email"]');
-          if (emailInput.value) {
-            alert("Thank you for subscribing to our newsletter!");
-            emailInput.value = "";
-          }
-        });
-      });
-    </script>
+      // Hiệu ứng đổi chữ trong nút
+      const originalText = button.textContent;
+      button.textContent = "Đã thêm!";
+      button.style.backgroundColor = "#4CAF50"; // đổi màu để dễ thấy
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.style.backgroundColor = ""; // trả lại màu cũ
+      }, 1000);
+    });
+  });
+
+  // Form đăng ký bản tin
+  const newsletterForm = document.querySelector(".newsletter-form");
+  if (newsletterForm) {
+    newsletterForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const emailInput = this.querySelector('input[type="email"]');
+      if (emailInput && emailInput.value.trim() !== "") {
+        alert("Cảm ơn bạn đã đăng ký nhận bản tin!");
+        emailInput.value = "";
+      } else {
+        alert("Vui lòng nhập địa chỉ email hợp lệ!");
+      }
+    });
+  }
+});
