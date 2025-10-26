@@ -30,17 +30,43 @@
         </div>
         <nav>
           <ul>
-            <li><a href="#">Trang chủ</a></li>
-            <li><a href="#">Cửa hàng</a></li>
-            <li><a href="#">Phân loại</a></li>
-            <li><a href="#">Hàng mới đến</a></li>
-            <li><a href="#">Ưu đãi</a></li>
+            <li><a href="trangchu.html">Trang chủ</a></li>
+            <li><a href="index.html">Cửa hàng</a></li>
+            <li class="dropdown">
+              <a href="phanloai.html" id="phanloai-link">Phân loại</a>
+              <ul class="dropdown-menu">
+                <li><a href="phanloai.html#bohoatuoi">Bó Hoa Tươi</a></li>
+                <li><a href="phanloai.html#hoacuoi">Hoa Cưới</a></li>
+                <li><a href="#">Trang trí theo yêu cầu</a></li>
+                <li><a href="#">Hộp Hoa Tươi</a></li>
+                <li><a href="#">Bình Hoa Tươi</a></li>
+                <li><a href="#">Lẵng Hoa Khai Trương</a></li>
+                <li><a href="#">Lẵng Hoa Chia Buồn</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="quatangthem.html" id="phanloai-link">Quà Tặng Thêm</a>
+              <ul class="dropdown-menu">
+                <li><a href="quatangthem.html#gaubong">Gấu Bông</a></li>
+                <li><a href="quatangthem.html#banhkem">Bánh Kem</a></li>
+                <li><a href="#">Chocolate</a></li>
+                <li><a href="#">Trái Cây</a></li>
+                <li><a href="#">Nến Thơm</a></li>
+              </ul>
+            </li>
+            <li><a href="uudai.html">Ưu đãi</a></li>
             <li><a href="#">Liên hệ</a></li>
           </ul>
         </nav>
       </div>
     </header>
-    <!-- Background -->
+
+    <!-- Quà Tặng Thêm-->
+     <section id="gaubong" class="section"></section> 
+
+
+
+        <!-- Background -->
     <section class="hero">
       <div class="container">
         <div class="hero-content">
@@ -50,12 +76,13 @@
             lên đến 50% cho một số sản phẩm. Ưu đãi có thời hạn!
           </p>
           <div class="hero-buttons">
-            <a href="#" class="btn btn-primary"> Mua ngay</a>
+            <a href="cuahang.html" class="btn btn-primary"> Mua ngay</a>
             <a href="#" class="btn btn-outline">Tìm hiểu thêm</a>
           </div>
         </div>
       </div>
     </section>
+
 
     <!-- Phần danh mục -->
     <section class="section">
@@ -63,29 +90,30 @@
         <div class="section-title">
           <h2>Mua sắm theo danh mục</h2>
           <p>
-            Duyệt qua nhiều danh mục sản phẩm của chúng tôi để tìm chính xác
-            những gì bạn đang tìm kiếm
+            Dành riêng cho bạn
           </p>
         </div>
         <div class="categories">
           <div class="category-card">
-            <a href="hoacuoi.html" class="category-card-link">
+            <a href="phanloai.html#bohoatuoi" class="category-card-link">
               <img
                 src="img/4e289b50516907650c4614829a90255c.jpg"
                 alt="Hoa bó"
               />
               <div class="category-content">
-                <h3>Hoa bó</h3>
+                <h3>Bó Hoa Tươi</h3>
                 <p>Mang vẻ đẹp thiên nhiên</p>
               </div>
             </a>
           </div>
           <div class="category-card">
+            <a href="phanloai.html#hoacuoi" class="category-card-link">
             <img src="img/hoa.jpg" alt="Hoa cưới" />
             <div class="category-content">
-              <h3>Hoa cưới</h3>
+              <h3>Hoa Cưới</h3>
               <p>Hẹn ước</p>
             </div>
+            </a>
           </div>
           <div class="category-card">
             <img
@@ -93,7 +121,7 @@
               alt="Hoa khai trương"
             />
             <div class="category-content">
-              <h3>Hoa khai trương</h3>
+              <h3>Lẵng Hoa Khai Trương</h3>
               <p>Khởi đầu may mắn</p>
             </div>
           </div>
@@ -107,117 +135,91 @@
               <p>Trang trí theo yêu cầu</p>
             </div>
           </div>
+          <div class="category-card">
+            <a href="#" class="category-card-link">
+            <img src="img/2fdd3e4445ff0cb150824cb445db3026.jpg" alt="Hoa cưới" />
+            <div class="category-content">
+              <h3>Hộp Hoa Tươi</h3>
+              <p>Mang niềm vui đến cho bạn</p>
+            </div>
+            </a>
+          </div>
+          <div class="category-card">
+            <a href="#" class="category-card-link">
+            <img src="img/2f623dab7bad24ffdce622a6dbce1460.jpg" alt="Hoa cưới" />
+            <div class="category-content">
+              <h3>Giỏ Hoa Tươi</h3>
+              <p>Nhiều may mắn</p>
+            </div>
+            </a>
+          </div>
+          <div class="category-card">
+            <a href="#" class="category-card-link">
+            <img src="img\be4e336cb65c96e6d7d08a277ede089b.jpg" alt="Hoa cưới" />
+            <div class="category-content">
+              <h3>Lẵng Hoa Chia Buồn</h3>
+            </div>
+            </a>
+          </div>
+          <div class="category-card">
+            <a href="#" class="category-card-link">
+            <img src="img\c0c036c7cfcb515eff0f64c015bc371b.jpg" alt="Hoa cưới" />
+            <div class="category-content">
+              <h3>Gấu Bông</h3>
+            </div>
+            </a>
+          </div>
+
+          <div class="product hidden">
+           <div class="category-card">
+            <a href="#" class="category-card-link">
+            <img src="img\c0c036c7cfcb515eff0f64c015bc371b.jpg" alt="Hoa cưới" />
+            <div class="category-content">
+              <h3>Gấu Bông</h3>
+            </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="product hidden">
+           <div class="category-card">
+            <a href="#" class="category-card-link">
+            <img src="img\c0c036c7cfcb515eff0f64c015bc371b.jpg" alt="Hoa cưới" />
+            <div class="category-content">
+              <h3>Gấu Bông</h3>
+            </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="product hidden">
+           <div class="category-card">
+            <a href="#" class="category-card-link">
+            <img src="img\c0c036c7cfcb515eff0f64c015bc371b.jpg" alt="Hoa cưới" />
+            <div class="category-content">
+              <h3>Gấu Bông</h3>
+            </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="product hidden">
+           <div class="category-card">
+            <a href="#" class="category-card-link">
+            <img src="img\c0c036c7cfcb515eff0f64c015bc371b.jpg" alt="Hoa cưới" />
+            <div class="category-content">
+              <h3>Gấu Bông</h3>
+            </div>
+            </a>
+          </div>
+        </div>
         </div>
       </div>
+
+      <button id="showMoreBtn" class="show-more">Xem thêm ▼</button>
     </section>
 
-    <!-- sản phẩm nổi bật -->
-    <section class="section">
-      <div class="container">
-        <div class="section-title">
-          <h2>Sản phẩm nổi bật</h2>
-          <p>Hãy xem những sản phẩm phổ biến và thịnh hành nhất</p>
-        </div>
-        <div class="products">
-          <div class="product-card">
-            <div class="product-image">
-              <img
-                src="img/z7065704784282_bfbfc66bc200cafc8ccf483e528ff144.jpg"
-                alt="Hoa bó"
-              />
-            </div>
-            <div class="product-info">
-              <h3>Hoa bó</h3>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <span>(128)</span>
-              </div>
-              <div class="product-price">200.000đ</div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                <a href="#"><i class="far fa-heart"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-image">
-              <img
-                src="img/z7073464384461_56efb54c13439a6da9806c45132f5f01.jpg"
-                alt="Hoa cưới"
-              />
-            </div>
-            <div class="product-info">
-              <h3>Hoa cưới</h3>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <span>(95)</span>
-              </div>
-              <div class="product-price">250,000đ</div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                <a href="#"><i class="far fa-heart"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-image">
-              <img
-                src="img/f036ff31078b55f5e10666a52f2fd95d.jpg"
-                alt="Hoa bướm"
-              />
-            </div>
-            <div class="product-info">
-              <h3>Hoa bó</h3>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>(210)</span>
-              </div>
-              <div class="product-price">300.000đ</div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                <a href="#"><i class="far fa-heart"></i></a>
-              </div>
-            </div>
-          </div>
-          <div class="product-card">
-            <div class="product-image">
-              <img
-                src="img/48e8547f870ac0a0f62ace21018fdf58.jpg"
-                alt="Hoa quạt"
-              />
-            </div>
-            <div class="product-info">
-              <h3>Hoa trang trí</h3>
-              <div class="rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <span>(156)</span>
-              </div>
-              <div class="product-price">299,000đ</div>
-              <div class="product-actions">
-                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
-                <a href="#"><i class="far fa-heart"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- Features Section -->
     <section class="section features">
