@@ -1,15 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MỘC HOA</title>
+    <title>MỘC HOA - Cửa hàng hoa tươi</title>
+
+    <!-- Meta SEO -->
+    <meta
+      name="description"
+      content="Mộc Hoa - Cửa hàng hoa tươi chuyên bó hoa sinh nhật, hoa cưới, hoa chúc mừng, giao nhanh trong ngày tại TP.HCM."
+    />
+    <meta
+      name="keywords"
+      content="hoa tươi, shop hoa, hoa cưới, bó hoa, Mộc Hoa, hoa sinh nhật, hoa khai trương, hoa chia buồn"
+    />
+    <meta name="author" content="Mộc Hoa" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <!-- Header -->
     <header>
@@ -17,7 +30,7 @@
         <div class="header-top">
           <div class="logo">MỘC<span>HOA</span></div>
           <div class="search-bar">
-            <input type="text" placeholder="Search for products..." />
+            <input type="text" placeholder="Tìm kiếm sản phẩm..." />
             <button><i class="fas fa-search"></i></button>
           </div>
           <div class="header-actions">
@@ -28,15 +41,16 @@
             </a>
           </div>
         </div>
+
         <nav>
           <ul>
             <li><a href="trangchu.html">Trang chủ</a></li>
             <li><a href="index.html">Cửa hàng</a></li>
             <li class="dropdown">
-              <a href="phanloai.html" id="phanloai-link">Phân loại</a>
+              <a href="#" class="phanloai-link">Phân loại</a>
               <ul class="dropdown-menu">
-                <li><a href="phanloai.html#bohoatuoi">Bó Hoa Tươi</a></li>
-                <li><a href="phanloai.html#hoacuoi">Hoa Cưới</a></li>
+                <li><a href="bohoatuoi.html">Bó Hoa Tươi</a></li>
+                <li><a href="hoacuoi.html">Hoa Cưới</a></li>
                 <li><a href="#">Trang trí theo yêu cầu</a></li>
                 <li><a href="#">Hộp Hoa Tươi</a></li>
                 <li><a href="#">Bình Hoa Tươi</a></li>
@@ -45,10 +59,10 @@
               </ul>
             </li>
             <li class="dropdown">
-              <a href="quatangthem.html" id="phanloai-link">Quà Tặng Thêm</a>
+              <a href="#" class="phanloai-link">Quà Tặng Thêm</a>
               <ul class="dropdown-menu">
-                <li><a href="quatangthem.html#gaubong">Gấu Bông</a></li>
-                <li><a href="quatangthem.html#banhkem">Bánh Kem</a></li>
+                <li><a href="gaubong.html">Gấu Bông</a></li>
+                <li><a href="banhkem.html">Bánh Kem</a></li>
                 <li><a href="#">Chocolate</a></li>
                 <li><a href="#">Trái Cây</a></li>
                 <li><a href="#">Nến Thơm</a></li>
@@ -61,12 +75,10 @@
       </div>
     </header>
 
-    <!-- Quà Tặng Thêm-->
-     <section id="gaubong" class="section"></section> 
+    <!-- Quà Tặng Thêm -->
+    <section id="gaubong" class="section"></section>
 
-
-
-        <!-- Background -->
+    <!-- Background -->
     <section class="hero">
       <div class="container">
         <div class="hero-content">
@@ -76,210 +88,146 @@
             lên đến 50% cho một số sản phẩm. Ưu đãi có thời hạn!
           </p>
           <div class="hero-buttons">
-            <a href="cuahang.html" class="btn btn-primary"> Mua ngay</a>
+            <a href="cuahang.html" class="btn btn-primary">Mua ngay</a>
             <a href="#" class="btn btn-outline">Tìm hiểu thêm</a>
           </div>
         </div>
       </div>
     </section>
 
-
-    <!-- Phần danh mục -->
+    <!-- Danh mục -->
     <section class="section">
       <div class="container">
         <div class="section-title">
           <h2>Mua sắm theo danh mục</h2>
-          <p>
-            Dành riêng cho bạn
-          </p>
+          <p>Dành riêng cho bạn</p>
         </div>
+
         <div class="categories">
+          <!-- Lưu ý: sửa \\ thành / để tránh lỗi đường dẫn -->
           <div class="category-card">
-            <a href="phanloai.html#bohoatuoi" class="category-card-link">
-              <img
-                src="img/4e289b50516907650c4614829a90255c.jpg"
-                alt="Hoa bó"
-              />
+            <a href="bohoatuoi.html" class="category-card-link">
+              <img src="img/4e289b50516907650c4614829a90255c.jpg" alt="Hoa bó" />
               <div class="category-content">
                 <h3>Bó Hoa Tươi</h3>
                 <p>Mang vẻ đẹp thiên nhiên</p>
               </div>
             </a>
           </div>
+
           <div class="category-card">
-            <a href="phanloai.html#hoacuoi" class="category-card-link">
-            <img src="img/hoa.jpg" alt="Hoa cưới" />
-            <div class="category-content">
-              <h3>Hoa Cưới</h3>
-              <p>Hẹn ước</p>
-            </div>
+            <a href="hoacuoi.html" class="category-card-link">
+              <img src="img/hoa.jpg" alt="Hoa cưới" />
+              <div class="category-content">
+                <h3>Hoa Cưới</h3>
+                <p>Hẹn ước trăm năm</p>
+              </div>
             </a>
           </div>
+
           <div class="category-card">
-            <img
-              src="img/569c013b289c0079584b0d43c3f1c2cb.jpg"
-              alt="Hoa khai trương"
-            />
+            <img src="img/569c013b289c0079584b0d43c3f1c2cb.jpg" alt="Hoa khai trương" />
             <div class="category-content">
               <h3>Lẵng Hoa Khai Trương</h3>
               <p>Khởi đầu may mắn</p>
             </div>
           </div>
+
           <div class="category-card">
-            <img
-              src="img/35c75d3ca3f1907ee60b66aee7adb243.jpg"
-              alt="Trang trí theo yêu cầu"
-            />
+            <img src="img/35c75d3ca3f1907ee60b66aee7adb243.jpg" alt="Trang trí theo yêu cầu" />
             <div class="category-content">
               <h3>Trang trí theo yêu cầu</h3>
-              <p>Trang trí theo yêu cầu</p>
+              <p>Thiết kế theo sở thích</p>
             </div>
           </div>
+
           <div class="category-card">
             <a href="#" class="category-card-link">
-            <img src="img/2fdd3e4445ff0cb150824cb445db3026.jpg" alt="Hoa cưới" />
-            <div class="category-content">
-              <h3>Hộp Hoa Tươi</h3>
-              <p>Mang niềm vui đến cho bạn</p>
-            </div>
-            </a>
-          </div>
-          <div class="category-card">
-            <a href="#" class="category-card-link">
-            <img src="img/2f623dab7bad24ffdce622a6dbce1460.jpg" alt="Hoa cưới" />
-            <div class="category-content">
-              <h3>Giỏ Hoa Tươi</h3>
-              <p>Nhiều may mắn</p>
-            </div>
-            </a>
-          </div>
-          <div class="category-card">
-            <a href="#" class="category-card-link">
-            <img src="img\be4e336cb65c96e6d7d08a277ede089b.jpg" alt="Hoa cưới" />
-            <div class="category-content">
-              <h3>Lẵng Hoa Chia Buồn</h3>
-            </div>
-            </a>
-          </div>
-          <div class="category-card">
-            <a href="#" class="category-card-link">
-            <img src="img\c0c036c7cfcb515eff0f64c015bc371b.jpg" alt="Hoa cưới" />
-            <div class="category-content">
-              <h3>Gấu Bông</h3>
-            </div>
+              <img src="img/2fdd3e4445ff0cb150824cb445db3026.jpg" alt="Hộp hoa tươi" />
+              <div class="category-content">
+                <h3>Hộp Hoa Tươi</h3>
+                <p>Mang niềm vui đến cho bạn</p>
+              </div>
             </a>
           </div>
 
-          <div class="product hidden">
-           <div class="category-card">
+          <div class="category-card">
             <a href="#" class="category-card-link">
-            <img src="img\c0c036c7cfcb515eff0f64c015bc371b.jpg" alt="Hoa cưới" />
-            <div class="category-content">
-              <h3>Gấu Bông</h3>
-            </div>
+              <img src="img/2f623dab7bad24ffdce622a6dbce1460.jpg" alt="Giỏ hoa tươi" />
+              <div class="category-content">
+                <h3>Giỏ Hoa Tươi</h3>
+                <p>Trao gửi yêu thương</p>
+              </div>
             </a>
           </div>
-        </div>
 
-        <div class="product hidden">
-           <div class="category-card">
+          <div class="category-card">
             <a href="#" class="category-card-link">
-            <img src="img\c0c036c7cfcb515eff0f64c015bc371b.jpg" alt="Hoa cưới" />
-            <div class="category-content">
-              <h3>Gấu Bông</h3>
-            </div>
+              <img src="img/be4e336cb65c96e6d7d08a277ede089b.jpg" alt="Lẵng hoa chia buồn" />
+              <div class="category-content">
+                <h3>Lẵng Hoa Chia Buồn</h3>
+              </div>
             </a>
           </div>
-        </div>
 
-        <div class="product hidden">
-           <div class="category-card">
-            <a href="#" class="category-card-link">
-            <img src="img\c0c036c7cfcb515eff0f64c015bc371b.jpg" alt="Hoa cưới" />
-            <div class="category-content">
-              <h3>Gấu Bông</h3>
-            </div>
+          <div class="category-card">
+            <a href="gaubong.html" class="category-card-link">
+              <img src="img/c0c036c7cfcb515eff0f64c015bc371b.jpg" alt="Gấu bông" />
+              <div class="category-content">
+                <h3>Gấu Bông</h3>
+              </div>
             </a>
           </div>
-        </div>
-
-        <div class="product hidden">
-           <div class="category-card">
-            <a href="#" class="category-card-link">
-            <img src="img\c0c036c7cfcb515eff0f64c015bc371b.jpg" alt="Hoa cưới" />
-            <div class="category-content">
-              <h3>Gấu Bông</h3>
-            </div>
-            </a>
-          </div>
-        </div>
         </div>
       </div>
-
-      <button id="showMoreBtn" class="show-more">Xem thêm ▼</button>
     </section>
 
-    
-
-    <!-- Features Section -->
+    <!-- Features -->
     <section class="section features">
       <div class="container">
         <div class="section-title">
-          <h2>Tại sao nên chọn Mộc hoa</h2>
-          <p>
-            Chúng tôi cung cấp trải nghiệm mua sắm tốt nhất cho khách hàng của
-            chúng tôi
-          </p>
+          <h2>Tại sao nên chọn Mộc Hoa</h2>
+          <p>Chúng tôi cung cấp trải nghiệm mua sắm tốt nhất cho khách hàng</p>
         </div>
+
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-shipping-fast"></i>
-            </div>
+            <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
             <h3>Miễn phí vận chuyển</h3>
-            <p>Miễn phí vận chuyển cho tất cả các đơn hàng trên 50.000đ</p>
+            <p>Miễn phí vận chuyển cho tất cả đơn hàng trên 50.000đ</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-undo-alt"></i>
-            </div>
+            <div class="feature-icon"><i class="fas fa-undo-alt"></i></div>
             <h3>Trả lại dễ dàng</h3>
-            <p>Chính sách đổi trả trong vòng 24 giờ cho tất cả các mặt hàng</p>
+            <p>Đổi trả trong vòng 24 giờ cho tất cả sản phẩm</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-lock"></i>
-            </div>
+            <div class="feature-icon"><i class="fas fa-lock"></i></div>
             <h3>Thanh toán an toàn</h3>
-            <p>Thông tin thanh toán của bạn được chúng tôi bảo mật an toàn</p>
+            <p>Thông tin thanh toán được bảo mật tuyệt đối</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-headset"></i>
-            </div>
+            <div class="feature-icon"><i class="fas fa-headset"></i></div>
             <h3>Hỗ trợ 24/7</h3>
-            <p>Hỗ trợ khách hàng 24/7</p>
+            <p>Đội ngũ CSKH luôn sẵn sàng hỗ trợ bạn</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!--  bản tin -->
+    <!-- Newsletter -->
     <section class="newsletter">
       <div class="container">
-        <h2>Đăng ký nhận bản tin của chúng tôi</h2>
-        <p>
-          Nhận thông tin cập nhật mới nhất về sản phẩm mới và các đợt bán sắp
-          tới
-        </p>
+        <h2>Đăng ký nhận bản tin</h2>
+        <p>Nhận thông báo mới nhất về sản phẩm và khuyến mãi</p>
         <form class="newsletter-form">
-          <input type="email" placeholder="Địa chỉ email của bạn" />
-          <button type="submit">Đặt mua</button>
+          <input type="email" placeholder="Nhập email của bạn..." />
+          <button type="submit">Đăng ký</button>
         </form>
       </div>
     </section>
 
-    <!-- Chân trang -->
+    <!-- Footer -->
     <footer>
       <div class="container">
         <div class="footer-content">
@@ -293,46 +241,46 @@
               <li><a href="#">Thẻ quà tặng</a></li>
             </ul>
           </div>
+
           <div class="footer-column">
             <h3>Thông tin</h3>
             <ul>
               <li><a href="#">Về chúng tôi</a></li>
-              <li><a href="#">Liên hệ với chúng tôi</a></li>
+              <li><a href="#">Liên hệ</a></li>
               <li><a href="#">Chính sách bảo mật</a></li>
               <li><a href="#">Điều khoản & Điều kiện</a></li>
               <li><a href="#">Thông tin vận chuyển</a></li>
             </ul>
           </div>
+
           <div class="footer-column">
             <h3>Dịch vụ khách hàng</h3>
             <ul>
               <li><a href="#">Tài khoản của tôi</a></li>
               <li><a href="#">Lịch sử đặt hàng</a></li>
-              <li><a href="#">Trả lại</a></li>
+              <li><a href="#">Trả hàng</a></li>
               <li><a href="#">Danh sách yêu thích</a></li>
-              <li><a href="#">Bản tin</a></li>
+              <li><a href="#">Đăng ký bản tin</a></li>
             </ul>
           </div>
+
           <div class="footer-column">
-            <h3>Contact Us</h3>
+            <h3>Liên hệ</h3>
             <ul>
-              <li>
-                <i class="fas fa-map-marker-alt"></i> 123 Nguyễn Trãi, phường
-                11, quận 5
-              </li>
-              <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+              <li><i class="fas fa-map-marker-alt"></i> 123 Nguyễn Trãi, Quận 5, TP.HCM</li>
+              <li><i class="fas fa-phone"></i> 0123 456 789</li>
               <li><i class="fas fa-envelope"></i> mochoa123@gmail.com</li>
             </ul>
             <div class="social-links">
               <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
               <a href="#"><i class="fab fa-instagram"></i></a>
               <a href="#"><i class="fab fa-pinterest"></i></a>
             </div>
           </div>
         </div>
+
         <div class="footer-bottom">
-          <p>&copy; 2025 Mộc hoa. Mọi quyền được bảo lưu.</p>
+          <p>&copy; 2025 Mộc Hoa. Mọi quyền được bảo lưu.</p>
         </div>
       </div>
     </footer>

@@ -39,35 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const phanLoaiLink = document.getElementById("phanloai-link");
-    const phanLoaiSection = document.getElementById("phanloai-section");
-
-    if (phanLoaiLink && phanLoaiSection) {
-        phanLoaiLink.addEventListener("click", function (e) {
-            e.preventDefault(); 
-            phanLoaiSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-        });
-    }
-});
 
 
-const btn = document.getElementById('showMoreBtn');
-    const hiddenProducts = document.querySelectorAll('.product.hidden');
-    let shown = false;
+  
 
-    btn.addEventListener('click', () => {
-      if (!shown) {
-        hiddenProducts.forEach(p => p.classList.remove('hidden'));
-        btn.textContent = 'Thu gọn ▲';
-        shown = true;
-      } else {
-        hiddenProducts.forEach(p => p.classList.add('hidden'));
-        btn.textContent = 'Xem thêm ▼';
-        shown = false;
-      }
-    });
 
