@@ -1,3 +1,172 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff;
+  margin: 0;
+  padding: 50px;
+  color: #333;
+}
+
+.product-container {
+  display: flex;
+  gap: 50px;
+  max-width: 1100px;
+  margin: auto;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+}
+
+.product-images {
+  flex: 1;
+}
+
+.main-image img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.thumbnail-list {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.thumbnail-list img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.thumbnail-list img:hover {
+  transform: scale(1.05);
+}
+
+.product-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category {
+  color: #8b8b8b;
+  font-size: 14px;
+}
+
+h1 {
+  margin: 5px 0;
+  color: #2e2e2e;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status {
+  background: #d9f7e7;
+  color: #f9a18d;
+  padding: 3px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+}
+
+.price {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.price .new {
+  color: #e08a00;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.price .old {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.desc {
+  line-height: 1.6;
+  color: #555;
+}
+
+.quantity button {
+  width: 35px;
+  height: 35px;
+  font-size: 18px;
+  border: none;
+  background: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.quantity input {
+  width: 50px;
+  text-align: center;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  margin: 0 8px;
+  border-radius: 6px;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.add-cart {
+  background: #f9a18d;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-cart:hover {
+  background: #ffe5e0;
+}
+
+.buy-now {
+  background: #e13535;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buy-now:hover {
+  background: #f9a18d;
+}
+
+.extra-info {
+  font-size: 14px;
+  color: #f9a18d;
+  margin-top: 20px;
+}
+
+.extra-info i {
+  margin-right: 10px;
+  cursor: pointer;
+  color: #f9a18d;
+  transition: 0.3s;
+}
+
+.extra-info i:hover {
+  color: #2e6b3a;
+}
+
+/* style */
 /* Đặt lại khoảng cách, viền và font mặc định cho toàn trang */
 
 * {
@@ -230,8 +399,6 @@ nav a:hover {
 }
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.138), rgba(0, 0, 0, 0.259)),
-    url("img/nen.png");
   background-size: cover;
   background-position: center;
   color: white;

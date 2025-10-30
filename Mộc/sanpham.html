@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="sanpham.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-top">
+          <div class="logo">MỘC<span>HOA</span></div>
+          <div class="search-bar">
+            <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+            <button><i class="fas fa-search"></i></button>
+          </div>
+          <div class="header-actions">
+            <a href="#"><i class="fas fa-user"></i> Tài khoản</a>
+            <a href="#" class="cart-icon">
+              <i class="fas fa-shopping-cart"></i> Giỏ hàng
+              <span class="cart-count">3</span>
+            </a>
+          </div>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="index.html">Trang chủ</a></li>
+            <li><a href="index.html">Cửa hàng</a></li>
+            <li class="dropdown">
+              <a href="#" class="phanloai-link">Phân loại</a>
+              <ul class="dropdown-menu">
+                <li><a href="bohoatuoi.html">Bó Hoa Tươi</a></li>
+                <li><a href="hoacuoi.html">Hoa Cưới</a></li>
+                <li><a href="trangtri.html">Trang trí theo yêu cầu</a></li>
+                <li><a href="#">Hộp Hoa Tươi</a></li>
+                <li><a href="#">Bình Hoa Tươi</a></li>
+                <li><a href="khaitruong.html">Lẵng Hoa Khai Trương</a></li>
+                <li><a href="#">Lẵng Hoa Chia Buồn</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="phanloai-link">Quà Tặng Thêm</a>
+              <ul class="dropdown-menu">
+                <li><a href="gaubong.html">Gấu Bông</a></li>
+                <li><a href="banhkem.html">Bánh Kem</a></li>
+                <li><a href="#">Chocolate</a></li>
+                <li><a href="#">Trái Cây</a></li>
+                <li><a href="#">Nến Thơm</a></li>
+              </ul>
+            </li>
+            <li><a href="uudai.html">Ưu đãi</a></li>
+            <li><a href="#">Liên hệ</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="product-container">
+      <!-- Ảnh sản phẩm -->
+      <div class="product-images">
+        <div class="main-image">
+          <img id="mainImg" src="img/hoabo (2).jpg" alt="Xuân Sắc Hoa" />
+        </div>
+        <!-- <div class="thumbnail-list">
+          <img src="img/product1.jpg" alt="" onclick="changeImage(this)" />
+          <img src="img/product2.jpg" alt="" onclick="changeImage(this)" />
+          <img src="img/product3.jpg" alt="" onclick="changeImage(this)" />
+          <img src="img/product4.jpg" alt="" onclick="changeImage(this)" />
+        </div> -->
+      </div>
+
+      <!-- Thông tin sản phẩm -->
+      <div class="product-details">
+        <p class="category">Hoa bó</p>
+        <h1>Xuân sắc hoa</h1>
+        <div class="rating">
+          <span class="stars">⭐️⭐️⭐️⭐️⭐️</span>
+          <span class="review">(245 đánh giá)</span>
+          <span class="status">Còn hàng</span>
+        </div>
+
+        <div class="price">
+          <span class="new">200.000</span>
+          <span class="old">300.000</span>
+        </div>
+
+        <p class="desc">
+          Mỗi bông hoa là một câu chuyện, là lời nhắn gửi yêu thương mà Mộc Hoa
+          trân trọng gửi đến bạn.
+        </p>
+
+       
+
+        <div class="quantity">
+          <button onclick="decrease()">-</button>
+          <input type="text" id="qty" value="1" />
+          <button onclick="increase()">+</button>
+        </div>
+
+        <div class="action-buttons">
+          <button class="add-cart">
+            <i class="fas fa-shopping-cart"></i> Thêm vào giỏ
+          </button>
+          <button class="buy-now">Mua ngay</button>
+        </div>
+<div class="desc"> 
+    <h2>Mô tả sản phẩm:</h2>
+<ul> Bó hoa được kết hợp hài hòa từ nhiều loài hoa:
+    <li>Hoa cúc mẫu đơn</li>
+    <li>Hoa cúc họa mi mini</li>
+    <li>Hoa thanh anh</li>
+    <li>Hoa baby khô</li>
+    <li>Hoa cẩm chướng nhỏ</li>
+    <li>Hoa bi cầu trắng</li>
+    <li>Hoa lá phụ trang trí</li>
+</ul>
+</div>
+        <div class="extra-info">
+        
+            <strong>Chia sẻ:</strong>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-pinterest"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="product.js"></script>
+  </body>
+</html>

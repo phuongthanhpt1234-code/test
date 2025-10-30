@@ -16,7 +16,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="hoabo.css" />
   </head>
   <body>
     <!-- Header -->
@@ -38,17 +38,17 @@
         </div>
         <nav>
           <ul>
-            <li><a href="trangchu.html">Trang chủ</a></li>
+            <li><a href="index.html">Trang chủ</a></li>
             <li><a href="index.html">Cửa hàng</a></li>
             <li class="dropdown">
               <a id="phanloai1" href="#">Phân loại</a>
               <ul class="dropdown-menu">
                 <li><a href="bohoatuoi.html">Bó Hoa Tươi</a></li>
                 <li><a href="hoacuoi.html">Hoa Cưới</a></li>
-                <li><a href="#">Trang trí theo yêu cầu</a></li>
+                <li><a href="trangtri.html">Trang trí theo yêu cầu</a></li>
                 <li><a href="#">Hộp Hoa Tươi</a></li>
                 <li><a href="#">Bình Hoa Tươi</a></li>
-                <li><a href="#">Lẵng Hoa Khai Trương</a></li>
+                <li><a href="khaitruong.html">Lẵng Hoa Khai Trương</a></li>
                 <li><a href="#">Lẵng Hoa Chia Buồn</a></li>
               </ul>
             </li>
@@ -387,7 +387,47 @@
         </div>
       </div>
     </footer>
-
+    <!-- Modal Đăng ký -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Đăng ký</h2>
+        <form id="registerForm">
+          <input
+            type="text"
+            id="registerUsername"
+            placeholder="Tên đăng nhập"
+            required
+          />
+          <input
+            type="password"
+            id="registerPassword"
+            placeholder="Mật khẩu"
+            required
+          />
+          <input
+            type="password"
+            id="registerPassword"
+            placeholder="Nhập lại mật khẩu"
+            required
+          />
+          <input
+            type="email"
+            id="registerPassword"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="tel"
+            id="registerPassword"
+            placeholder="Số điện thoại"
+            required
+          />
+          <button type="submit" class="btn btn-primary">Đăng ký</button>
+        </form>
+        <p>Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập</a></p>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

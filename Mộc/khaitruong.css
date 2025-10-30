@@ -1,12 +1,10 @@
-/* Đặt lại khoảng cách, viền và font mặc định cho toàn trang */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-/* Định nghĩa màu chủ đạo cho toàn trang */
+
 :root {
   --primary: #f8afa6;
   --secondary: #fae9d7;
@@ -31,14 +29,14 @@ a {
 ul {
   list-style: none;
 }
-/* Container căn giữa nội dung */
+
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
-/* Nút cơ bản */
+
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -179,7 +177,7 @@ nav ul {
 }
 
 nav li {
-  position: relative;
+  position: relative; /*cần để menu con định vị theo từng mục */
 }
 
 nav a {
@@ -196,9 +194,11 @@ nav a:hover {
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%; /* Nằm ngay dưới chữ Phân loại */
-  left: 50%; /* Canh giữa theo chữ Phân loại */
-  transform: translateX(-50%);
+  top: 100%; /* Nằm ngay dưới chữ “Phân loại” */
+  left: 50%; /* Canh giữa theo chữ “Phân loại” */
+  transform: translateX(
+    -50%
+  ); /* Dịch ngược lại 1/2 chiều rộng để nằm giữa hoàn hảo */
   background-color: #fff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   list-style: none;
@@ -231,7 +231,7 @@ nav a:hover {
 /* Hero Section */
 .hero {
   background: linear-gradient(rgba(0, 0, 0, 0.138), rgba(0, 0, 0, 0.259)),
-    url("img/nen.png");
+    url("img/nenhoakhaitruong.png");
   background-size: cover;
   background-position: center;
   color: white;
@@ -548,7 +548,7 @@ nav a:hover {
   margin-bottom: 15px;
 }
 
-/* bản tin */
+/* Newsletter Section */
 .newsletter {
   background-color: var(--primary);
   color: white;
@@ -683,112 +683,4 @@ footer {
     border-radius: 4px;
     padding: 15px;
   }
-}
-/* Đăng nhập */
-.modal {
-  display: none; /* Ẩn mặc định */
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-  background-color: #fff;
-  margin: 10% auto;
-  padding: 30px 20px;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.modal-content h2 {
-  color: #f08080;
-  margin-bottom: 20px;
-}
-
-.modal-content input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.modal-content button {
-  width: 100%;
-  padding: 10px;
-}
-
-.modal-content p {
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-.modal-content a {
-  color: #f08080;
-  font-weight: bold;
-}
-
-.close {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 24px;
-  cursor: pointer;
-  color: #555;
-}
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.logout-link {
-  color: #c0392b;
-  text-decoration: none;
-  font-weight: 500;
-  margin-left: 10px;
-  transition: color 0.2s ease, opacity 0.3s ease;
-}
-
-.logout-link:hover {
-  color: #e74c3c;
-  opacity: 0.8;
-}
-.account-inline {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: #e06b53;
-  cursor: pointer;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
-  font-size: 13px;
-  transition: color 0.3s ease;
-}
-.account-inline:hover .username {
-  color: #d1443d;
-}
-
-.logout-text {
-  opacity: 0;
-  margin-left: 0;
-  color: #fa7b7b;
-  font-size: 13px;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
-  transition: all 0.3s ease;
-}
-.account-inline:hover .logout-text {
-  opacity: 1;
-  margin-left: 10px;
 }

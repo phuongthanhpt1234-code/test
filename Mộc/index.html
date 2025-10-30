@@ -44,17 +44,17 @@
 
         <nav>
           <ul>
-            <li><a href="trangchu.html">Trang chủ</a></li>
+            <li><a href="index.html">Trang chủ</a></li>
             <li><a href="index.html">Cửa hàng</a></li>
             <li class="dropdown">
               <a href="#" class="phanloai-link">Phân loại</a>
               <ul class="dropdown-menu">
                 <li><a href="bohoatuoi.html">Bó Hoa Tươi</a></li>
                 <li><a href="hoacuoi.html">Hoa Cưới</a></li>
-                <li><a href="#">Trang trí theo yêu cầu</a></li>
+                <li><a href="trangtri.html">Trang trí theo yêu cầu</a></li>
                 <li><a href="#">Hộp Hoa Tươi</a></li>
                 <li><a href="#">Bình Hoa Tươi</a></li>
-                <li><a href="#">Lẵng Hoa Khai Trương</a></li>
+                <li><a href="khaitruong.html">Lẵng Hoa Khai Trương</a></li>
                 <li><a href="#">Lẵng Hoa Chia Buồn</a></li>
               </ul>
             </li>
@@ -104,7 +104,6 @@
         </div>
 
         <div class="categories">
-          <!-- Lưu ý: sửa \\ thành / để tránh lỗi đường dẫn -->
           <div class="category-card">
             <a href="bohoatuoi.html" class="category-card-link">
               <img src="img/hoabo (2).jpg" alt="Hoa bó" />
@@ -134,11 +133,13 @@
           </div>
 
           <div class="category-card">
-            <img src="img/hoatrangtri.jpg" alt="Trang trí theo yêu cầu" />
-            <div class="category-content">
-              <h3>Trang trí theo yêu cầu</h3>
-              <p>Thiết kế theo sở thích</p>
-            </div>
+            <a href="trangtri.html" class="category-card-link">
+              <img src="img/hoatrangtri.jpg" alt="Trang trí theo yêu cầu" />
+              <div class="category-content">
+                <h3>Trang trí theo yêu cầu</h3>
+                <p>Thiết kế theo sở thích</p>
+              </div>
+            </a>
           </div>
 
           <div class="category-card">
@@ -288,6 +289,73 @@
       </div>
     </footer>
 
+    <!-- Đăng nhập -->
+    <!-- Modal Đăng nhập -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Đăng nhập</h2>
+        <form id="loginForm">
+          <input
+            type="text"
+            id="loginUsername"
+            placeholder="Tên đăng nhập"
+            required
+          />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Mật khẩu"
+            required
+          />
+
+          <button type="submit" class="btn btn-primary">Đăng nhập</button>
+        </form>
+        <p>Chưa có tài khoản? <a href="#" id="showRegister">Đăng ký ngay</a></p>
+      </div>
+    </div>
+
+    <!-- Modal Đăng ký -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Đăng ký</h2>
+        <form id="registerForm">
+          <input
+            type="text"
+            id="registerUsername"
+            placeholder="Tên đăng nhập"
+            required
+          />
+          <input
+            type="password"
+            id="registerPassword"
+            placeholder="Mật khẩu"
+            required
+          />
+          <input
+            type="password"
+            id="registerPassword"
+            placeholder="Nhập lại mật khẩu"
+            required
+          />
+          <input
+            type="email"
+            id="registerPassword"
+            placeholder="Email"
+            required
+          />
+          <input
+            type="tel"
+            id="registerPassword"
+            placeholder="Số điện thoại"
+            required
+          />
+          <button type="submit" class="btn btn-primary">Đăng ký</button>
+        </form>
+        <p>Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập</a></p>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
