@@ -17,7 +17,7 @@
 
 body {
   background-color: #fff;
-  color: #f6ab9c;
+  color: #0000009e;
   line-height: 1;
 }
 
@@ -48,13 +48,13 @@ ul {
 }
 
 .btn-primary {
-  background-color: #f9a18d;
+  background-color: #f08080;
   color: white;
 }
 
 .btn-primary:hover {
   background-color: #ffe5e0;
-  color: #e06b53;
+  color: #f08080;
 }
 
 .btn-secondary {
@@ -273,14 +273,14 @@ nav a:hover {
 
 .section-title h2 {
   font-size: 42px;
-  color: #f49c8b;
+  color: #F28B82;
   margin-bottom: 15px;
   font-weight: 600;
 }
 
 .section-title p {
-  color: var(--gray);
-  max-width: 600px;
+  color: #F28B82;
+  max-width: 800px;
   margin: 0 auto;
 }
 
@@ -365,7 +365,7 @@ nav a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  background: #fff3e6c2;
+  background: #fff0ed00;
   color: #f0705f;
   padding: 20px;
 }
@@ -430,11 +430,28 @@ nav a:hover {
   margin-bottom: 10px;
 }
 
-.product-price-2 {
-  font-weight: 700;
-  color: #e38275;
-  margin-bottom: 15px;
+.product-price {
+    font-weight: 600;
+    font-size: 16px;
+    color: #242424;
+    margin-bottom: 15px;
 }
+
+.old-price {
+  text-decoration: line-through;
+  font-weight: 200;
+  font-size: 13px;
+  color: rgb(87, 87, 87);
+  margin-right: 6px;
+}
+
+.new-price {
+  font-weight: 400;
+  font-size: 16px;
+  color: rgb(11, 11, 11);
+  font-weight: bold;
+}
+
 
 .product-actions-2 {
   display: flex;
