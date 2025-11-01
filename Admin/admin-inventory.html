@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Danh Mục Sản Phẩm (Mockup)</title>
+    <style>
+        /* --- Định nghĩa màu sắc và fonts theo ảnh mẫu --- */
+        :root {
+            --primary-pink: #ffffff; /* Màu hồng đậm/đỏ cho tiêu đề và nút */
+            --light-pink: #f7e6e5; /* Màu hồng phấn/be nhạt cho nền */
+            --text-color: #4a4a4a;
+            --light-text-color: #888;
+            --success-color: #5cb85c;
+            --danger-color: #d9534f;
+            --warning-color: #f0ad4e;
+            --background-light: #fefefe;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-light);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .admin-header {
+    background-color: #e57488;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.admin-layout {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f7e6e5;
+    color: white;
+    min-height: calc(100vh - 50px); /* Điều chỉnh chiều cao cho phù hợp */
+    padding-top: 20px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #c9302c;
+    border-left: 5px solid transparent;
+    transition: background-color 0.3s, border-left-color 0.3s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: #f3c8c5;
+}
+    </style>
+</head>
+<main class="content">
+     <header class="admin-header">
+        <h1>Hệ Thống Quản Trị</h1>
+        <div class="logout-info">
+            <span id="admin-user-info">Tài khoản: <strong>admin</strong> |</span>
+            <a id="logoutLink" href="#">Đăng xuất</a>
+        </div>
+    </header>
+    
+    <div class="admin-layout">
+        <nav class="sidebar">
+            <a href="admin-dashboard.html" class="active">Dashboard</a>
+            <a href="admin-users.html">Quản lý Người dùng</a>
+            <a href="admin-products.html">Quản lý Sản phẩm</a>
+            <a href="admin-imports.html">Quản lý Nhập hàng</a>
+            <a href="admin-prices.html">Quản lý Giá bán</a>
+            <a href="admin-orders.html">Quản lý Đơn hàng</a>
+            <a href="admin-inventory.html">Quản lý Tồn kho & Báo cáo</a>
+        </nav>
+
+    <h2> Quản lý Tồn kho & Thống kê</h2>
+    <div class="admin-form">
+        <h3>Báo cáo Nhập - Xuất - Tồn</h3>
+        <form action="/admin-inventory.html" method="GET">
+            <label for="report_start_date">Từ ngày:</label>
+            <input type="date" id="report_start_date" name="start_date" required>
+            <label for="report_end_date">Đến ngày:</label>
+            <input type="date" id="report_end_date" name="end_date" required>
+            <button type="submit">Xem Báo cáo</button>
+        </form>
+    </div>
+
+    <h3 style="color: #e74c3c;">🚨 Cảnh báo Sản phẩm sắp hết hàng</h3>
+    <table>
+        </table>
+    
+    <h3>Tra cứu Số lượng tồn hiện tại</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Mã SP</th>
+                <th>Tên SP</th>
+                <th>Loại</th>
+                <th>Tồn kho</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>SP001</td>
+                <td>Sản phẩm A</td>
+                <td>Điện thoại</td>
+                <td>10</td>
+            </tr>
+        </tbody>
+    </table>
+</main>

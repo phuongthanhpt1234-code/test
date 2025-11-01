@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Trị - Dashboard</title>
+    <link rel="stylesheet" href="admin-style.css">
+    
+    <script>
+        // Kiểm tra ngay lập tức khi trang tải
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (isLoggedIn !== 'true') {
+            alert('Lỗi: Bạn không có quyền truy cập. Vui lòng đăng nhập.');
+            window.location.href = 'admin-login.html';
+        }
+
+        // Lấy tên người dùng để hiển thị (Cần chờ DOM tải để tìm element)
+        const userName = localStorage.getItem('adminUser') || 'Quản trị viên';
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            const userInfoElement = document.getElementById('admin-user-info');
+            if(userInfoElement) {
+                 // Dùng innerHTML để hỗ trợ hiển thị thẻ <b>/<strong> cho chữ đậm
+                 userInfoElement.innerHTML = `Tài khoản: <strong>${userName}</strong> |`;
+            }
+
+            // Xử lý logic ĐĂNG XUẤT
+            const logoutLink = document.getElementById('logoutLink');
+            if (logoutLink) {
+                logoutLink.addEventListener('click', (event) => {
+                    event.preventDefault(); // Ngăn chặn hành động mặc định của link
+                    localStorage.removeItem('isLoggedIn');
+                    localStorage.removeItem('adminUser');
+                    window.location.href = 'admin-login.html';
+                });
+            }
+        });
+    </script>
+</head>
+<body>
+    <header class="admin-header">
+        <h1>Hệ Thống Quản Trị</h1>
+        <div class="logout-info">
+            <span id="admin-user-info">Tài khoản: <strong>admin</strong> |</span>
+            <a id="logoutLink" href="#">Đăng xuất</a>
+        </div>
+    </header>
+    
+    <div class="admin-layout">
+        <nav class="sidebar">
+            <a href="admin-dashboard.html" class="active">Dashboard</a>
+            <a href="admin-users.html">Quản lý Người dùng</a>
+            <a href="admin-products.html">Quản lý Sản phẩm</a>
+            <a href="admin-imports.html">Quản lý Nhập hàng</a>
+            <a href="admin-prices.html">Quản lý Giá bán</a>
+            <a href="admin-orders.html">Quản lý Đơn hàng</a>
+            <a href="admin-inventory.html">Quản lý Tồn kho & Báo cáo</a>
+        </nav>
+        
+        <main class="content">
+            <h2>Chào mừng, Quản trị viên!</h2>
+            <p>Đây là bảng điều khiển chính. Vui lòng chọn chức năng từ menu bên trái để thực hiện quản lý.</p>
+            
+            <hr>
+            
+            <h3>Thống kê tổng quan (Dữ liệu do Server-side render)</h3>
+            <div class="dashboard-stats" style="display: flex; gap: 20px;">
+                <div style="padding: 15px; border: 1px solid #ccc; background-color: #e9ecef; border-radius: 4px;">
+                    <h4>Tổng đơn hàng mới</h4>
+                    <p style="font-size: 1.5em; font-weight: bold;">15</p>
+                </div>
+                <div style="padding: 15px; border: 1px solid #ccc; background-color: #ffe0e0; border-radius: 4px;">
+                    <h4>Sản phẩm sắp hết hàng</h4>
+                    <p style="font-size: 1.5em; font-weight: bold; color: #dc3545;">3</p>
+                </div>
+            </div>
+            
+            </main>
+    </div>
+</body>
+</html>

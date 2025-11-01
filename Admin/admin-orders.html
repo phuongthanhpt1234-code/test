@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Danh Mục Sản Phẩm (Mockup)</title>
+    <style>
+        /* --- Định nghĩa màu sắc và fonts theo ảnh mẫu --- */
+        :root {
+            --primary-pink: #ffffff; /* Màu hồng đậm/đỏ cho tiêu đề và nút */
+            --light-pink: #f7e6e5; /* Màu hồng phấn/be nhạt cho nền */
+            --text-color: #4a4a4a;
+            --light-text-color: #888;
+            --success-color: #5cb85c;
+            --danger-color: #d9534f;
+            --warning-color: #f0ad4e;
+            --background-light: #fefefe;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-light);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .admin-header {
+    background-color: #e57488;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.admin-layout {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f7e6e5;
+    color: white;
+    min-height: calc(100vh - 50px); /* Điều chỉnh chiều cao cho phù hợp */
+    padding-top: 20px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #c9302c;
+    border-left: 5px solid transparent;
+    transition: background-color 0.3s, border-left-color 0.3s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: #f3c8c5;
+}
+    </style>
+</head>
+
+<main class="content">
+
+     <header class="admin-header">
+        <h1>Hệ Thống Quản Trị</h1>
+        <div class="logout-info">
+            <span id="admin-user-info">Tài khoản: <strong>admin</strong> |</span>
+            <a id="logoutLink" href="#">Đăng xuất</a>
+        </div>
+    </header>
+    
+    <div class="admin-layout">
+        <nav class="sidebar">
+            <a href="admin-dashboard.html" class="active">Dashboard</a>
+            <a href="admin-users.html">Quản lý Người dùng</a>
+            <a href="admin-products.html">Quản lý Sản phẩm</a>
+            <a href="admin-imports.html">Quản lý Nhập hàng</a>
+            <a href="admin-prices.html">Quản lý Giá bán</a>
+            <a href="admin-orders.html">Quản lý Đơn hàng</a>
+            <a href="admin-inventory.html">Quản lý Tồn kho & Báo cáo</a>
+        </nav>
+
+    <h2>Quản lý Đơn đặt hàng</h2>
+    <div class="admin-form">
+        <h3>Lọc & Sắp xếp Đơn hàng</h3>
+        <form action="/admin-orders.html" method="GET">
+            <label for="start_date">Từ ngày:</label>
+            <input type="date" id="start_date" name="start_date">
+            
+            <label for="end_date">Đến ngày:</label>
+            <input type="date" id="end_date" name="end_date">
+            
+            <label for="status_filter">Tình trạng:</label>
+            <select id="status_filter" name="status">
+                <option value="">Tất cả</option>
+                <option value="new">Chưa xử lý</option>
+                <option value="confirmed">Đã xác nhận</option>
+                <option value="delivered">Đã giao thành công</option>
+                <option value="cancelled">Đã hủy</option>
+            </select>
+
+            <label for="sort_by_address">Sắp xếp theo (Phường):</label>
+            <select id="sort_by_address" name="sort_by">
+                <option value="order_date">Ngày đặt</option>
+                <option value="delivery_ward">Phường giao hàng</option>
+            </select>
+
+            <button type="submit">Áp dụng Lọc/Sắp xếp</button>
+        </form>
+    </div>
+
+    <h3>Danh sách Đơn hàng</h3>
+    <table>
+        <tr>
+            <td>DH123</td>
+            <td>...</td>
+            <td>
+                <a href="/order-detail.html?id=DH123">Xem chi tiết</a>
+            </td>
+            <td>
+                <form action="/api/admin/orders/update-status" method="POST">
+                    <input type="hidden" name="order_id" value="DH123">
+                    <select name="new_status" onchange="this.form.submit()">
+                        <option value="new" selected>Chưa xử lý</option>
+                        <option value="confirmed">Đã xác nhận</option>
+                        </select>
+                </form>
+            </td>
+        </tr>
+    </table>
+</main>

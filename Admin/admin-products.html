@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Danh Mục Sản Phẩm (Mockup)</title>
+    <style>
+        /* --- Định nghĩa màu sắc và fonts theo ảnh mẫu --- */
+        :root {
+            --primary-pink: #ffffff; /* Màu hồng đậm/đỏ cho tiêu đề và nút */
+            --light-pink: #f7e6e5; /* Màu hồng phấn/be nhạt cho nền */
+            --text-color: #4a4a4a;
+            --light-text-color: #888;
+            --success-color: #5cb85c;
+            --danger-color: #d9534f;
+            --warning-color: #f0ad4e;
+            --background-light: #fefefe;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text-color);
+            background-color: var(--background-light);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding-left: 200px;
+            padding-right: 200px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .admin-header {
+    background-color: #e57488;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.admin-layout {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #f7e6e5;
+    color: white;
+    min-height: calc(100vh - 50px); /* Điều chỉnh chiều cao cho phù hợp */
+    padding-top: 20px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #c9302c;
+    border-left: 5px solid transparent;
+    transition: background-color 0.3s, border-left-color 0.3s;
+}
+
+.sidebar a:hover, .sidebar a.active {
+    background-color: #f3c8c5;
+}
+
+        /* --- Tiêu đề chung --- */
+        h1 {
+            color: var(--primary-pink);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            border-bottom: 2px solid var(--light-pink);
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: black;
+            border-left: 5px solid var(--primary-pink);
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* --- Form Styling --- */
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            margin-bottom: 30px;
+            background-color: #fafafa;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .full-width {
+            grid-column: 1 / 3;
+        }
+
+        label {
+            font-weight: 500;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+
+        input[type="text"], 
+        input[type="number"], 
+        input[type="file"],
+        textarea,
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        
+        /* --- Nút bấm --- */
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            background-color: #ffceca;
+            color: #c75e71;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-pink);
+        }
+
+        .btn-primary:hover {
+            background-color: #c75e71;
+        }
+
+        .btn-danger {
+            background-color: var(--danger-color);
+        }
+        .btn-danger:hover {
+            background-color: #c9302c;
+        }
+
+        .action-buttons {
+            grid-column: 1 / 3;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        /* --- Bảng Danh sách --- */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #eee;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e57488;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        /* --- Styling cho Hiện trạng --- */
+        .status-badge {
+            padding: 5px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .status-selling {
+            background-color: var(--success-color);
+            color: white;
+        }
+
+        .status-out {
+            background-color: var(--warning-color);
+            color: white;
+        }
+        
+        .status-discontinued {
+            background-color: var(--danger-color);
+            color: white;
+        }
+
+        /* --- Sửa Sản phẩm Đặc biệt --- */
+        .image-management {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .current-image {
+            width: 80px;
+            height: 80px;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: var(--light-text-color);
+        }
+    </style>
+</head>
+<body>
+
+    <header class="admin-header">
+        <h1>Hệ Thống Quản Trị</h1>
+        <div class="logout-info">
+            <span id="admin-user-info">Tài khoản: <strong>admin</strong> |</span>
+            <a id="logoutLink" href="#">Đăng xuất</a>
+        </div>
+    </header>
+    
+    <div class="admin-layout">
+        <nav class="sidebar">
+            <a href="admin-dashboard.html" class="active">Dashboard</a>
+            <a href="admin-users.html">Quản lý Người dùng</a>
+            <a href="admin-products.html">Quản lý Sản phẩm</a>
+            <a href="admin-imports.html">Quản lý Nhập hàng</a>
+            <a href="admin-prices.html">Quản lý Giá bán</a>
+            <a href="admin-orders.html">Quản lý Đơn hàng</a>
+            <a href="admin-inventory.html">Quản lý Tồn kho & Báo cáo</a>
+        </nav>
+
+    <div class="container">
+        <h1>Quản Lý Danh Mục Sản Phẩm</h1>
+
+        <section id="add-category-section">
+            <h3>Thêm Loại Sản phẩm</h3>
+            <form>
+                <div class="form-group">
+                    <label for="category-name">Tên Loại Sản phẩm:</label>
+                    <input type="text" id="category-name" name="category-name" required>
+                </div>
+                <div class="form-group full-width">
+                    <label for="category-description">Mô tả Loại Sản phẩm:</label>
+                    <textarea id="category-description" name="category-description"></textarea>
+                </div>
+                <div class="action-buttons full-width">
+                    <button type="submit" class="btn-primary">Thêm Loại</button>
+                </div>
+            </form>
+        </section>
+
+        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 30px 0;">
+
+        <section id="add-product-section">
+            <h3>Thêm Sản phẩm Mới</h3>
+            <form>
+                <div class="form-group"><label for="product-code">Mã Sản phẩm:</label><input type="text" id="product-code" required></div>
+                <div class="form-group"><label for="product-name">Tên Sản phẩm:</label><input type="text" id="product-name" required></div>
+                
+                <div class="form-group"><label for="product-category">Loại Sản phẩm:</label><select id="product-category" required><option>-- Chọn Loại (Hoa Hồng)</option><option>Hoa Lan</option></select></div>
+                <div class="form-group"><label for="product-unit">Đơn vị tính:</label><input type="text" id="product-unit" placeholder="Bó/Cành/Lẵng" required></div>
+                
+                <div class="form-group"><label for="product-quantity">Số lượng:</label><input type="number" id="product-quantity" min="0" required></div>
+                <div class="form-group"><label for="product-supplier">Nhà cung cấp:</label><input type="text" id="product-supplier"></div>
+                
+                <div class="form-group"><label for="product-price">Giá bán đề xuất:</label><input type="number" id="product-price" min="0" required></div>
+                <div class="form-group"><label for="product-margin">Tỉ lệ lợi nhuận mong muốn (%):</label><input type="number" id="product-margin" min="0" max="100"></div>
+
+                <div class="form-group full-width"><label for="product-image">Hình ảnh:</label><input type="file" id="product-image" accept="image/*"></div>
+                <div class="form-group full-width"><label for="product-description">Mô tả:</label><textarea id="product-description"></textarea></div>
+
+                <div class="action-buttons full-width">
+                    <button type="submit" class="btn-primary">Thêm Sản phẩm</button>
+                </div>
+            </form>
+        </section>
+
+        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 30px 0;">
+
+        <section id="product-list-section">
+            <h3>Danh sách Sản phẩm Hiện tại</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mã</th>
+                        <th>Tên Sản phẩm</th>
+                        <th>Giá</th>
+                        <th>Hiện trạng</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SP001</td>
+                        <td>Bó Hồng Đỏ Juliet</td>
+                        <td>550.000 VNĐ</td>
+                        <td><span class="status-badge status-selling">Đang bán</span></td>
+                        <td><button onclick="document.getElementById('edit-sp001').style.display='block';">Sửa</button></td>
+                    </tr>
+                    <tr>
+                        <td>SP002</td>
+                        <td>Lẵng Hoa Lan Hồ Điệp</td>
+                        <td>1.200.000 VNĐ</td>
+                        <td><span class="status-badge status-out">Hết hàng</span></td>
+                        <td><button onclick="document.getElementById('edit-sp002').style.display='block';">Sửa</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 30px 0;">
+
+        <section id="edit-sp001" style="display: none;">
+            <h3>Sửa Sản phẩm: SP001 - Bó Hồng Đỏ Juliet</h3>
+            <form>
+                <div class="form-group full-width">
+                    <label>Quản lý Hình ảnh:</label>
+                    <div class="image-management">
+                        <div class="current-image">Ảnh cũ</div>
+                        <button type="button" class="btn-danger">🗑️ Bỏ Hình</button>
+                        <input type="file" style="width: auto;">
+                    </div>
+                </div>
+                
+                <div class="form-group"><label for="edit-price">Giá bán đề xuất:</label><input type="number" id="edit-price" value="550000"></div>
+                <div class="form-group"><label for="edit-margin">Tỉ lệ lợi nhuận (%):</label><input type="number" id="edit-margin" value="25"></div>
+
+                <div class="form-group"><label for="edit-quantity">Số lượng tồn:</label><input type="number" id="edit-quantity" value="15"></div>
+
+                <div class="form-group">
+                    <label for="edit-status">Hiện trạng:</label>
+                    <select id="edit-status" required>
+                        <option value="selling" selected>Đang bán</option>
+                        <option value="out-of-stock">Hết hàng</option>
+                        <option value="discontinued">Ngừng bán</option>
+                    </select>
+                </div>
+
+                <div class="action-buttons full-width">
+                    <button type="button" onclick="document.getElementById('edit-sp001').style.display='none';">Hủy</button>
+                    <button type="submit" class="btn-primary">Lưu Thay đổi</button>
+                </div>
+            </form>
+        </section>
+
+    </div>
+
+</body>
+</html>
