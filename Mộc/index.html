@@ -1,28 +1,15 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MỘC HOA - Cửa hàng hoa tươi</title>
-
-    <!-- Meta SEO -->
-    <meta
-      name="description"
-      content="Mộc Hoa - Cửa hàng hoa tươi chuyên bó hoa sinh nhật, hoa cưới, hoa chúc mừng, giao nhanh trong ngày tại TP.HCM."
-    />
-    <meta
-      name="keywords"
-      content="hoa tươi, shop hoa, hoa cưới, bó hoa, Mộc Hoa, hoa sinh nhật, hoa khai trương, hoa chia buồn"
-    />
-    <meta name="author" content="Mộc Hoa" />
-
+    <title>MỘC HOA</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <!-- Header -->
     <header>
@@ -30,7 +17,7 @@
         <div class="header-top">
           <div class="logo">MỘC<span>HOA</span></div>
           <div class="search-bar">
-            <input type="text" placeholder="Tìm kiếm sản phẩm..." />
+            <input type="text" placeholder="Search for products..." />
             <button><i class="fas fa-search"></i></button>
           </div>
           <div class="header-actions">
@@ -41,25 +28,24 @@
             </a>
           </div>
         </div>
-
         <nav>
           <ul>
             <li><a href="index.html">Trang chủ</a></li>
-            <li><a href="index.html">Cửa hàng</a></li>
+            <li><a href="cuahang.html">Cửa hàng</a></li>
             <li class="dropdown">
-              <a href="#" class="phanloai-link">Phân loại</a>
+              <a id="phanloai-link">Phân loại</a>
               <ul class="dropdown-menu">
                 <li><a href="bohoatuoi.html">Bó Hoa Tươi</a></li>
                 <li><a href="hoacuoi.html">Hoa Cưới</a></li>
-                <li><a href="trangtri.html">Trang trí theo yêu cầu</a></li>
+                <li><a href="#">Trang trí theo yêu cầu</a></li>
                 <li><a href="#">Hộp Hoa Tươi</a></li>
                 <li><a href="#">Bình Hoa Tươi</a></li>
-                <li><a href="khaitruong.html">Lẵng Hoa Khai Trương</a></li>
+                <li><a href="#">Lẵng Hoa Khai Trương</a></li>
                 <li><a href="#">Lẵng Hoa Chia Buồn</a></li>
               </ul>
             </li>
             <li class="dropdown">
-              <a href="#" class="phanloai-link">Quà Tặng Thêm</a>
+              <a id="phanloai-link">Quà Tặng Thêm</a>
               <ul class="dropdown-menu">
                 <li><a href="gaubong.html">Gấu Bông</a></li>
                 <li><a href="banhkem.html">Bánh Kem</a></li>
@@ -74,10 +60,6 @@
         </nav>
       </div>
     </header>
-
-    <!-- Quà Tặng Thêm -->
-    <!-- <section id="gaubong" class="section"></section> -->
-
     <!-- Background -->
     <section class="hero">
       <div class="container">
@@ -88,147 +70,502 @@
             lên đến 50% cho một số sản phẩm. Ưu đãi có thời hạn!
           </p>
           <div class="hero-buttons">
-            <a href="cuahang.html" class="btn btn-primary">Mua ngay</a>
+            <a href="cuahang.html" class="btn btn-primary"> Mua ngay</a>
             <a href="#" class="btn btn-outline">Tìm hiểu thêm</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Danh mục -->
+    <!-- sản phẩm nổi bật -->
     <section class="section">
       <div class="container">
         <div class="section-title">
-          <h2>Mua sắm theo danh mục</h2>
-          <p>Dành riêng cho bạn</p>
+          <h2>Sản phẩm nổi bật</h2>
+          <p>Hãy xem những sản phẩm phổ biến và thịnh hành nhất</p>
         </div>
-
-        <div class="categories">
-          <div class="category-card">
-            <a href="bohoatuoi.html" class="category-card-link">
-              <img src="img/hoabo (2).jpg" alt="Hoa bó" />
-              <div class="category-content">
-                <h3>Bó Hoa Tươi</h3>
-                <p>Mang vẻ đẹp thiên nhiên</p>
+        <div class="products">
+          <div class="product-card">
+            <div class="ribbon-hot">HOT!</div>
+            <div class="product-image">
+              <a href="xuansac.html">
+              <img
+                src="img/hoabo (2).jpg"
+                alt="Xuân Sắc Hoa"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Xuân Sắc Hoa</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(128)</span>
               </div>
-            </a>
-          </div>
-
-          <div class="category-card">
-            <a href="hoacuoi.html" class="category-card-link">
-              <img src="img/hoa.jpg" alt="Hoa cưới" />
-              <div class="category-content">
-                <h3>Hoa Cưới</h3>
-                <p>Hẹn ước trăm năm</p>
+              <div class="product-price">200.000đ</div>
+              </a>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
               </div>
-            </a>
+            </div>
           </div>
-
-          <div class="category-card">
-            <img src="img/hoakhaitruong.jpg" alt="Hoa khai trương" />
-            <div class="category-content">
-              <h3>Lẵng Hoa Khai Trương</h3>
-              <p>Khởi đầu may mắn</p>
+          <div class="product-card">
+            <div class="ribbon-hot">HOT!</div>
+            <div class="product-image">
+              <a href="hilachoa.html">
+              <img
+                src="img/hoacuoi2.jpg"
+                alt="Hỉ Lạc Hoa"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Hỉ Lạc Hoa</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(95)</span>
+              </div>
+              <div class="product-price">250,000đ</div>
+              </a>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="ribbon-hot">HOT!</div>
+            <div class="product-image">
+              <a href="hongdiep.html">
+              <img
+                src="img/hoabo.jpg"
+                alt="Hoa bướm"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Hồng Điệp</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(210)</span>
+              </div>
+              <div class="product-price">300.000đ</div>
+              </a>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="ribbon-hot">HOT!</div>
+            <div class="product-image">
+              <a href="covan.html">
+              <img
+                src="img/hoatrangtri1.jpg"
+                alt="Hoa quạt"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Cổ Vận Hoa</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(156)</span>
+              </div>
+              <div class="product-price">299,000đ</div>
+              </a>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <div class="ribbon-hot">HOT!</div>
+            <div class="product-image">
+              <a href="#">
+              <img
+                src="img/hoabo2.jpg"
+                alt="Hỉ Lạc Hoa"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Đồng Tiền</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(95)</span>
+              </div>
+              <div class="product-price">250,000đ</div>
+              </a>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
             </div>
           </div>
 
-          <div class="category-card">
-            <a href="trangtri.html" class="category-card-link">
-              <img src="img/hoatrangtri.jpg" alt="Trang trí theo yêu cầu" />
-              <div class="category-content">
-                <h3>Trang trí theo yêu cầu</h3>
-                <p>Thiết kế theo sở thích</p>
+          <div class="product-card">
+            <div class="ribbon-hot">HOT!</div>
+            <div class="product-image">
+              <a href="#">
+              <img
+                src="img/hoabo1.jpg"
+                alt="Hỉ Lạc Hoa"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Cúc Bách Nhật</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(95)</span>
               </div>
-            </a>
+              <div class="product-price">250,000đ</div>
+              </a>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
           </div>
 
-          <div class="category-card">
-            <a href="#" class="category-card-link">
-              <img src="img/hophoa.jpg" alt="Hộp hoa tươi" />
-              <div class="category-content">
-                <h3>Hộp Hoa Tươi</h3>
-                <p>Mang niềm vui đến cho bạn</p>
+          <div class="product-card">
+            <div class="ribbon-hot">HOT!</div>
+            <div class="product-image">
+              <a href="#">
+              <img
+                src="img/hoabo4.jpg"
+                alt="Hỉ Lạc Hoa"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Hoa Kim Cát</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(95)</span>
               </div>
-            </a>
+              <div class="product-price">250,000đ</div>
+              </a>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
           </div>
 
-          <div class="category-card">
-            <a href="#" class="category-card-link">
-              <img src="img/giohoa1.jpg" alt="Giỏ hoa tươi" />
-              <div class="category-content">
-                <h3>Giỏ Hoa Tươi</h3>
-                <p>Trao gửi yêu thương</p>
+          <div class="product-card">
+            <div class="ribbon-hot">HOT!</div>
+            <div class="product-image">
+              <a href="#">
+              <img
+                src="img/hoabo6.jpg"
+                alt="Hỉ Lạc Hoa"
+              />
+            </div>
+            <div class="product-info">
+              <h3>Chanh Lạp</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(95)</span>
               </div>
-            </a>
+              <div class="product-price">250,000đ</div>
+              </a>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
           </div>
 
-          <div class="category-card">
-            <a href="#" class="category-card-link">
-              <img src="img/hoachiabuon.jpg" alt="Lẵng hoa chia buồn" />
-              <div class="category-content">
-                <h3>Lẵng Hoa Chia Buồn</h3>
+          <div class="product-card">
+            <div class="ribbon-freeship">FREESHIP</div>
+            <div class="product-image">
+              <a href="#">
+                <img src="img/hoabo5.jpg" alt="Hoa bó 5" />
+              </a>
+            </div>
+            <div class="product-info">
+              <h3>Mộng Dạ Phấn Hương</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <span>(95)</span>
               </div>
-            </a>
+              <div class="product-price">250.000đ</div>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
           </div>
 
-          <div class="category-card">
-            <a href="gaubong.html" class="category-card-link">
-              <img src="img/gaubong (3).jpg" alt="Gấu bông" />
-              <div class="category-content">
-                <h3>Gấu Bông</h3>
+          <!-- Product 3 -->
+          <div class="product-card">
+            <div class="ribbon-freeship">FREESHIP</div>
+            <div class="product-image">
+              <a href="#">
+                <img src="img/hoabo.jpg" alt="Hoa bó " />
+              </a>
+            </div>
+            <div class="product-info">
+              <h3>Thiên Vân Mộng Sắc</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(210)</span>
               </div>
-            </a>
+              <div class="product-price">300.000đ</div>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="product-card">
+            <div class="ribbon-freeship">FREESHIP</div>
+            <div class="product-image">
+              <a href="#">
+                <img src="img/hoabo6.jpg" alt="Hoa bó 6" />
+              </a>
+            </div>
+            <div class="product-info">
+              <h3>Mộng Dạ Phấn Hương</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>(156)</span>
+              </div>
+              <div class="product-price">299.000đ</div>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- Product 5 -->
+          <div class="product-card">
+            <div class="ribbon-freeship">FREESHIP</div>
+            <div class="product-image">
+              <a href="#">
+                <img src="img/hoabo7.jpg" alt="Hoa bó 7" />
+              </a>
+            </div>
+            <div class="product-info">
+              <h3>Phù Vân Tình Tự</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(210)</span>
+              </div>
+              <div class="product-price">300.000đ</div>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- Product 6 -->
+          <div class="product-card">
+            <div class="ribbon-freeship">FREESHIP</div>
+            <div class="product-image">
+              <a href="#">
+                <img src="img/hoabo11.jpg" alt="Hoa bó 8" />
+              </a>
+            </div>
+            <div class="product-info">
+              <h3>Tuyết Hoa Mộng Ảnh</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(210)</span>
+              </div>
+              <div class="product-price">300.000đ</div>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- Product 7 -->
+          <div class="product-card">
+            <div class="ribbon-freeship">FREESHIP</div>
+            <div class="product-image">
+              <a href="#">
+                <img src="img/hoabo9.jpg" alt="Hoa bó 9" />
+              </a>
+            </div>
+            <div class="product-info">
+              <h3>Tịch Dương Mộng Sắc</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(210)</span>
+              </div>
+              <div class="product-price">300.000đ</div>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- Product 8 -->
+          <div class="product-card">
+            <div class="ribbon-freeship">FREESHIP</div>
+            <div class="product-image">
+              <a href="#">
+                <img src="img/hoabo10.jpg" alt="Hoa bó 9" />
+              </a>
+            </div>
+            <div class="product-info">
+              <h3>Huyền Hương Tịnh Sắc</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>(210)</span>
+              </div>
+              <div class="product-price">300.000đ</div>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-image">
+              <img src="img/hoacuoi.jpg" alt="Nguyệt Hoa Tịnh Duyên" />
+            </div>
+            <div class="product-info">
+              <h3>Nguyệt Hoa Tịnh Duyên</h3>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="far fa-star"></i>
+                <span>(95)</span>
+              </div>
+              <div class="product-price">250.000đ</div>
+              <div class="product-actions">
+                <a href="#" class="btn btn-primary">Thêm vào giỏ hàng</a>
+                <a href="#"><i class="far fa-heart"></i></a>
+              </div>
+            </div>
           </div>
         </div>
+
+
+
+        <!-- Phân trang -->
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  <a href="#" class="active">1</a>
+  <a href="trangchu2.html">2</a>
+  <a href="trangchu3.html">3</a>
+  <a href="trangchu2.html">&raquo;</a>
+</div>
+
       </div>
+
+      
+      
     </section>
 
-    <!-- Features -->
+    <!-- Features Section -->
     <section class="section features">
       <div class="container">
         <div class="section-title">
-          <h2>Tại sao nên chọn Mộc Hoa</h2>
-          <p>Chúng tôi cung cấp trải nghiệm mua sắm tốt nhất cho khách hàng</p>
+          <h2>Tại sao nên chọn Mộc hoa</h2>
+          <p>
+            Chúng tôi cung cấp trải nghiệm mua sắm tốt nhất cho khách hàng của
+            chúng tôi
+          </p>
         </div>
-
         <div class="features-grid">
           <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+            <div class="feature-icon">
+              <i class="fas fa-shipping-fast"></i>
+            </div>
             <h3>Miễn phí vận chuyển</h3>
-            <p>Miễn phí vận chuyển cho tất cả đơn hàng trên 50.000đ</p>
+            <p>Miễn phí vận chuyển cho tất cả các đơn hàng trên 50.000đ</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-undo-alt"></i></div>
+            <div class="feature-icon">
+              <i class="fas fa-undo-alt"></i>
+            </div>
             <h3>Trả lại dễ dàng</h3>
-            <p>Đổi trả trong vòng 24 giờ cho tất cả sản phẩm</p>
+            <p>Chính sách đổi trả trong vòng 24 giờ cho tất cả các mặt hàng</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-lock"></i></div>
+            <div class="feature-icon">
+              <i class="fas fa-lock"></i>
+            </div>
             <h3>Thanh toán an toàn</h3>
-            <p>Thông tin thanh toán được bảo mật tuyệt đối</p>
+            <p>Thông tin thanh toán của bạn được chúng tôi bảo mật an toàn</p>
           </div>
           <div class="feature-card">
-            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
             <h3>Hỗ trợ 24/7</h3>
-            <p>Đội ngũ CSKH luôn sẵn sàng hỗ trợ bạn</p>
+            <p>Hỗ trợ khách hàng 24/7</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Newsletter -->
+    <!--  bản tin -->
     <section class="newsletter">
       <div class="container">
-        <h2>Đăng ký nhận bản tin</h2>
-        <p>Nhận thông báo mới nhất về sản phẩm và khuyến mãi</p>
+        <h2>Đăng ký nhận bản tin của chúng tôi</h2>
+        <p>
+          Nhận thông tin cập nhật mới nhất về sản phẩm mới và các đợt bán sắp
+          tới
+        </p>
         <form class="newsletter-form">
-          <input type="email" placeholder="Nhập email của bạn..." />
-          <button type="submit">Đăng ký</button>
+          <input type="email" placeholder="Địa chỉ email của bạn" />
+          <button type="submit">Đặt mua</button>
         </form>
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Chân trang -->
     <footer>
       <div class="container">
         <div class="footer-content">
@@ -242,120 +579,50 @@
               <li><a href="#">Thẻ quà tặng</a></li>
             </ul>
           </div>
-
           <div class="footer-column">
-            <h3>Thông tin</h3>
-            <ul>
+           <ul>
               <li><a href="#">Về chúng tôi</a></li>
-              <li><a href="#">Liên hệ</a></li>
+              <li><a href="#">Liên hệ với chúng tôi</a></li>
               <li><a href="#">Chính sách bảo mật</a></li>
               <li><a href="#">Điều khoản & Điều kiện</a></li>
               <li><a href="#">Thông tin vận chuyển</a></li>
             </ul>
           </div>
-
           <div class="footer-column">
+                <li><a href="#">Bản tin</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul>
+              <h3>Thông tin</h3>
             <h3>Dịch vụ khách hàng</h3>
             <ul>
               <li><a href="#">Tài khoản của tôi</a></li>
               <li><a href="#">Lịch sử đặt hàng</a></li>
-              <li><a href="#">Trả hàng</a></li>
+              <li><a href="#">Trả lại</a></li>
               <li><a href="#">Danh sách yêu thích</a></li>
-              <li><a href="#">Đăng ký bản tin</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-column">
-            <h3>Liên hệ</h3>
-            <ul>
-              <li>
-                <i class="fas fa-map-marker-alt"></i> 123 Nguyễn Trãi, Quận 5,
-                TP.HCM
+           li>
+                <i class="fas fa-map-marker-alt"></i> 123 Nguyễn Trãi, phường
+                11, quận 5
               </li>
-              <li><i class="fas fa-phone"></i> 0123 456 789</li>
+              <li><i class="fas fa-phone"></i> (123) 456-7890</li>
               <li><i class="fas fa-envelope"></i> mochoa123@gmail.com</li>
             </ul>
             <div class="social-links">
               <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
               <a href="#"><i class="fab fa-instagram"></i></a>
               <a href="#"><i class="fab fa-pinterest"></i></a>
             </div>
           </div>
         </div>
-
         <div class="footer-bottom">
-          <p>&copy; 2025 Mộc Hoa. Mọi quyền được bảo lưu.</p>
+          <p>&copy; 2025 Mộc hoa. Mọi quyền được bảo lưu.</p>
         </div>
       </div>
     </footer>
 
-    <!-- Đăng nhập -->
-    <!-- Modal Đăng nhập -->
-    <div id="loginModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Đăng nhập</h2>
-        <form id="loginForm">
-          <input
-            type="text"
-            id="loginUsername"
-            placeholder="Tên đăng nhập"
-            required
-          />
-          <input
-            type="password"
-            id="loginPassword"
-            placeholder="Mật khẩu"
-            required
-          />
-
-          <button type="submit" class="btn btn-primary">Đăng nhập</button>
-        </form>
-        <p>Chưa có tài khoản? <a href="#" id="showRegister">Đăng ký ngay</a></p>
-      </div>
-    </div>
-
-    <!-- Modal Đăng ký -->
-    <div id="registerModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Đăng ký</h2>
-        <form id="registerForm">
-          <input
-            type="text"
-            id="registerUsername"
-            placeholder="Tên đăng nhập"
-            required
-          />
-          <input
-            type="password"
-            id="registerPassword"
-            placeholder="Mật khẩu"
-            required
-          />
-          <input
-            type="password"
-            id="registerPassword"
-            placeholder="Nhập lại mật khẩu"
-            required
-          />
-          <input
-            type="email"
-            id="registerPassword"
-            placeholder="Email"
-            required
-          />
-          <input
-            type="tel"
-            id="registerPassword"
-            placeholder="Số điện thoại"
-            required
-          />
-          <button type="submit" class="btn btn-primary">Đăng ký</button>
-        </form>
-        <p>Đã có tài khoản? <a href="#" id="showLogin">Đăng nhập</a></p>
-      </div>
-    </div>
     <script src="script.js"></script>
   </body>
 </html>
