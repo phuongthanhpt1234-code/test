@@ -1,21 +1,22 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản Lý Danh Mục Sản Phẩm (Mockup)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* --- Định nghĩa màu sắc và fonts theo ảnh mẫu --- */
         :root {
-            --primary-pink: #e57488; /* Màu hồng đậm/đỏ cho tiêu đề và nút */
-            --light-pink: #f7e6e5; /* Màu hồng phấn/be nhạt cho nền */
-            --text-color: #4a4a4a;
+            --primary-pink: #ffffff;
+            --light-pink: #c43655;
+            --text-color: #000000;
             --light-text-color: #888;
             --success-color: #5cb85c;
-            --danger-color: #d9534f;
+            --danger-color: #c9302c; /* Đã sửa để khớp với nút Hủy */
             --warning-color: #f0ad4e;
             --background-light: #fefefe;
+            --pink:  #f3c8c5
         }
 
         * {
@@ -29,62 +30,133 @@
             color: var(--text-color);
             background-color: var(--background-light);
             line-height: 1.6;
-            padding: 20px;
+            /* LOẠI BỎ: padding: 20px; */
         }
 
+        /* ĐÃ CHỈNH SỬA: Biến container thành CARD */
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 80%; /* Quan trọng để flex-direction column hoạt động */
+            margin-left: 120px;
             background-color: white;
-            padding: 30px;
+            /* LOẠI BỎ: margin: 0 auto; và margin-top: 50px; */
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 30px; /* Thêm padding trên để cân bằng */
+            padding-bottom: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10); /* Giảm shadow cho đẹp hơn */
         }
+
+        .container h1 {
+            color: var(--text-color);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            border-bottom: 2px solid var(--light-pink);
+            padding-bottom: 10px;
+        }
+
 
         .admin-header {
-    background-color: #e57488;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+            background-color: #e57488;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.admin-header h1 {
-    margin: 0;
-    font-size: 1.5em;
-}
+        .admin-header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
 
-.admin-layout {
-    display: flex;
-}
+        .admin-layout {
+            display: flex;
+            min-height: calc(100vh - 50px);
+        }
 
-.sidebar {
-    width: 250px;
-    background-color: #f7e6e5;
-    color: white;
-    min-height: calc(100vh - 50px); /* Điều chỉnh chiều cao cho phù hợp */
-    padding-top: 20px;
-}
+        .sidebar {
+            width: 200px;
+            background-color: #f7e6e5;
+            color: white;
+            min-height: calc(100vh - 50px);
+            padding-top: 20px;
+        }
 
-.sidebar a {
-    display: block;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: #c9302c;
-    border-left: 5px solid transparent;
-    transition: background-color 0.3s, border-left-color 0.3s;
-}
+        .sidebar a {
+            display: block;
+            text-align: center;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #c9302c;
+            border-left: 5px solid transparent;
+            transition: background-color 0.3s, border-left-color 0.3s;
+        }
 
-.sidebar a:hover, .sidebar a.active {
-    background-color: #f3c8c5;
-}
+        .sidebar a:hover, .sidebar a.active {
+            background-color: #f3c8c5;
+            color: #901731;
+        }
+
+        .sidebar h3 {
+            color:#901731;
+            margin: 0 auto;
+            text-align: center;
+            padding-left: 20px;
+            padding-bottom: 20px;
+            padding-right: 20px;
+            border-left: none;
+        }
+
+        /* ĐÃ THÊM: Khu vực chính xếp cột dọc */
+        .main-content {
+            flex-grow: 1; 
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* LỆNH QUAN TRỌNG ĐỂ XẾP CỘT DỌC */
+            gap: 25px; /* Khoảng cách giữa các container/card */
+        }
+
+        .card-title {
+            display: flex;
+            flex-direction: row; /* CHỈNH SỬA: Đã chuyển lại thành hàng ngang */
+            align-items: center; 
+            font-size: 20px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 20px;
+            padding-top: 0px; /* LOẠI BỎ PADDING TOP CŨ */
+        }
+
+        /* Định dạng cho icon để tạo khoảng cách */
+        .card-title .fas {
+            margin-right: 10px;
+        }
+        
+        /* --- Tiêu đề chung --- */
+        h1 {
+            color: var(--primary-pink);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: rgb(56, 56, 56);
+            border-left: 5px solid var(--pink);
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+
     </style>
 </head>
+<body>
 
-<main class="content">
-<header class="admin-header">
-        <h1>Hệ Thống Quản Trị</h1>
+    <header class="admin-header">
+        <h1>Quản Lý Người Dùng</h1>
         <div class="logout-info">
             <span id="admin-user-info">Tài khoản: <strong>admin</strong> |</span>
             <a id="logoutLink" href="#">Đăng xuất</a>
@@ -93,52 +165,17 @@
     
     <div class="admin-layout">
         <nav class="sidebar">
-            <a href="admin-dashboard.html" class="active">Dashboard</a>
-            <a href="admin-users.html">Quản lý Người dùng</a>
-            <a href="admin-products.html">Quản lý Sản phẩm</a>
-            <a href="admin-imports.html">Quản lý Nhập hàng</a>
-            <a href="admin-prices.html">Quản lý Giá bán</a>
-            <a href="admin-orders.html">Quản lý Đơn hàng</a>
-            <a href="admin-inventory.html">Quản lý Tồn kho & Báo cáo</a>
+            <h3>Hệ thống quản lý</h3>
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="admin-users.html" class="active">Người dùng</a>
+            <a href="admin-products.html">Sản phẩm</a>
+            <a href="admin-imports.html">Nhập hàng</a>
+            <a href="admin-prices.html">Giá bán</a>
+            <a href="admin-orders.html">Đơn hàng</a>
+            <a href="admin-inventory.html">Tồn kho & Báo cáo</a>
         </nav>
 
-    <h2>Quản lý Người dùng</h2>
-    <div class="admin-form">
-        <h3>Thêm Tài khoản mới</h3>
-        <form action="/api/admin/users/add" method="POST">
-            <label for="new_username">Tên tài khoản:</label>
-            <input type="text" id="new_username" name="username" required>
-            <label for="initial_password">Mật khẩu khởi tạo:</label>
-            <input type="password" id="initial_password" name="password" required>
-            <button type="submit">Thêm & Khởi tạo Mật khẩu</button>
-        </form>
-    </div>
+    
 
-    <h3>Danh sách Người dùng</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Tài khoản</th>
-                <th>Tên</th>
-                <th>Trạng thái</th>
-                <th>Hành động</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>quangminh</td>
-                <td>Quang Minh</td>
-                <td>Đang hoạt động</td>
-                <td>
-                    <form action="/api/admin/users/lock" method="POST" style="display: inline;">
-                        <input type="hidden" name="user_id" value="1">
-                        <button type="submit" style="background-color: #e74c3c;">Khóa</button>
-                    </form>
-                    <a href="/api/admin/users/reset?id=1" style="color: blue;">Reset Mật khẩu</a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</main>
+</body>
+</html>

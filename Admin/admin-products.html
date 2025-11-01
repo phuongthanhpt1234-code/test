@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản Lý Danh Mục Sản Phẩm (Mockup)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* --- Định nghĩa màu sắc và fonts theo ảnh mẫu --- */
         :root {
-            --primary-pink: #ffffff; /* Màu hồng đậm/đỏ cho tiêu đề và nút */
-            --light-pink: #f7e6e5; /* Màu hồng phấn/be nhạt cho nền */
-            --text-color: #4a4a4a;
+            --primary-pink: #ffffff;
+            --light-pink: #c43655;
+            --text-color: #000000;
             --light-text-color: #888;
             --success-color: #5cb85c;
-            --danger-color: #d9534f;
+            --danger-color: #c9302c; /* Đã sửa để khớp với nút Hủy */
             --warning-color: #f0ad4e;
             --background-light: #fefefe;
+            --pink:  #f3c8c5
         }
 
         * {
@@ -28,61 +30,25 @@
             color: var(--text-color);
             background-color: var(--background-light);
             line-height: 1.6;
-            padding: 20px;
+            /* LOẠI BỎ: padding: 20px; */
         }
 
+        /* ĐÃ CHỈNH SỬA: Biến container thành CARD */
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
+            width: 80%; /* Quan trọng để flex-direction column hoạt động */
+            margin-left: 120px;
             background-color: white;
-            padding-left: 200px;
-            padding-right: 200px;
+            /* LOẠI BỎ: margin: 0 auto; và margin-top: 50px; */
+            padding-left: 80px;
+            padding-right: 80px;
+            padding-top: 30px; /* Thêm padding trên để cân bằng */
+            padding-bottom: 30px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10); /* Giảm shadow cho đẹp hơn */
         }
 
-        .admin-header {
-    background-color: #e57488;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.admin-header h1 {
-    margin: 0;
-    font-size: 1.5em;
-}
-
-.admin-layout {
-    display: flex;
-}
-
-.sidebar {
-    width: 250px;
-    background-color: #f7e6e5;
-    color: white;
-    min-height: calc(100vh - 50px); /* Điều chỉnh chiều cao cho phù hợp */
-    padding-top: 20px;
-}
-
-.sidebar a {
-    display: block;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: #c9302c;
-    border-left: 5px solid transparent;
-    transition: background-color 0.3s, border-left-color 0.3s;
-}
-
-.sidebar a:hover, .sidebar a.active {
-    background-color: #f3c8c5;
-}
-
-        /* --- Tiêu đề chung --- */
-        h1 {
-            color: var(--primary-pink);
+        .container h1 {
+            color: var(--text-color);
             text-align: center;
             margin-bottom: 30px;
             font-size: 28px;
@@ -90,33 +56,168 @@
             padding-bottom: 10px;
         }
 
+
+        .admin-header {
+            background-color: #e57488;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .admin-header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .admin-layout {
+            display: flex;
+            min-height: calc(100vh - 50px);
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #f7e6e5;
+            color: white;
+            min-height: calc(100vh - 50px);
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            text-align: center;
+            padding: 12px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            color: #c9302c;
+            border-left: 5px solid transparent;
+            transition: background-color 0.3s, border-left-color 0.3s;
+        }
+
+        .sidebar a:hover, .sidebar a.active {
+            background-color: #f3c8c5;
+            color: #901731;
+        }
+
+        .sidebar h3 {
+            color:#901731;
+            margin: 0 auto;
+            text-align: center;
+            padding-left: 20px;
+            padding-bottom: 20px;
+            padding-right: 20px;
+            border-left: none;
+        }
+
+        /* ĐÃ THÊM: Khu vực chính xếp cột dọc */
+        .main-content {
+            flex-grow: 1; 
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* LỆNH QUAN TRỌNG ĐỂ XẾP CỘT DỌC */
+            gap: 25px; /* Khoảng cách giữa các container/card */
+        }
+
+        .card-title {
+            display: flex;
+            flex-direction: row; /* CHỈNH SỬA: Đã chuyển lại thành hàng ngang */
+            align-items: center; 
+            font-size: 20px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 20px;
+            padding-top: 0px; /* LOẠI BỎ PADDING TOP CŨ */
+        }
+
+        /* Định dạng cho icon để tạo khoảng cách */
+        .card-title .fas {
+            margin-right: 10px;
+        }
+        
+        /* --- Tiêu đề chung --- */
+        h1 {
+            color: var(--primary-pink);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 28px;
+            padding-bottom: 10px;
+        }
+
         h3 {
-            color: black;
-            border-left: 5px solid var(--primary-pink);
+            color: rgb(56, 56, 56);
+            border-left: 5px solid var(--pink);
             padding-left: 10px;
             margin-bottom: 20px;
         }
 
         /* --- Form Styling --- */
-        form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            padding: 20px;
-            border: 1px solid #eee;
-            border-radius: 4px;
-            margin-bottom: 30px;
-            background-color: #fafafa;
-        }
+        /* --- CSS Grid chính: 3 Cột --- */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 cột bằng nhau cho form chính */
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    margin-bottom: 0px;
+    background-color: #fafafa;
+}
 
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
+/* --- Form Group chung --- */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Quan trọng: Cho phép form-group co giãn chiều cao */
+}
 
-        .full-width {
-            grid-column: 1 / 3;
-        }
+/* --- Trường Full Width (Chiếm 3 Cột) --- */
+.full-width {
+    grid-column: 1 / 4; /* Chiếm toàn bộ 3 cột */
+}
+
+/* --- Lồng Grid 2 Cột (Ví dụ: Ảnh và Trạng Thái) --- */
+.grid-2-columns-row {
+    grid-column: 1 / 4; /* Chiếm toàn bộ 3 cột của form cha */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Chia bên trong thành 2 cột 50%-50% */
+    gap: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+/* --- Cân xứng Dọc cho Nút Chọn Ảnh --- */
+.align-bottom {
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-end; /* ĐẨY nội dung (nút) xuống cuối, cân xứng với ô input/select */
+    height: 100%; /* Đảm bảo nó chiếm đủ chiều cao của hàng */
+}
+
+/* --- Định dạng Nút File Label --- */
+.file-label {
+    display: block; /* Quan trọng: Biến nó thành block để chiếm 100% chiều rộng */
+    width: 100%;
+    margin-top: 30px;
+    padding: 8px 20px; 
+    background: linear-gradient(135deg, #fcc0c0);
+    color: #1a1a1a;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.10);
+}
+
+.file-label:hover{
+    background: linear-gradient(135deg, #f4d7d7);
+    transform: translateY(3px);
+    color: #5b5b5b;
+    box-shadow: 0 3px 10px #f4d7d7 ;
+}
+.file-upload {
+    display: none;
+}
 
         label {
             font-weight: 500;
@@ -143,34 +244,60 @@
         
         /* --- Nút bấm --- */
         button {
-            padding: 10px 20px;
+            padding:5px 10px;
             border: none;
-            border-radius: 4px;
+            border-radius: 8px;
+            font-size: 14px;
             font-weight: 700;
             cursor: pointer;
-            background-color: #ffceca;
-            color: #c75e71;
+            background-color: #d0d0d0;
+            color: #000000;
         }
 
         .btn-primary {
-            background-color: var(--primary-pink);
+            background-color: #c43655;
+            color: white;
+             /* Đảm bảo màu chữ là trắng */
         }
 
         .btn-primary:hover {
-            background-color: #c75e71;
+            background-color: #e36f85;
         }
 
         .btn-danger {
             background-color: var(--danger-color);
+            color: white; /* Đảm bảo màu chữ là trắng */
         }
         .btn-danger:hover {
-            background-color: #c9302c;
+            background-color: #9d2528;
         }
 
+        .btn-add-large {
+    background-color: #c43655;
+    grid-column: 1 / 4; /* Vẫn chiếm hết 3 cột */
+    color: white; 
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    padding: 12px 28px;
+    font-size: 15px; 
+    display: block; 
+    margin: 10px auto; /* Căn giữa hoàn hảo */
+    width: 250px; /* Đặt chiều rộng cố định để nút nằm giữa */
+}
+
+.btn-add-large:hover {
+    background-color: #e36f85;
+    transform: translateY(3px);
+    box-shadow: 0 3px 10px #e36f85;
+}
+
         .action-buttons {
-            grid-column: 1 / 3;
+            grid-column: 1 / 4;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             gap: 10px;
             margin-top: 10px;
         }
@@ -189,7 +316,7 @@
         }
 
         th {
-            background-color: #e57488;
+            background-color: #e7657c;
             font-weight: 700;
             color: white;
             text-transform: uppercase;
@@ -200,7 +327,7 @@
         .status-badge {
             padding: 5px 10px;
             border-radius: 12px;
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 700;
             text-align: center;
             display: inline-block;
@@ -240,12 +367,36 @@
             font-size: 12px;
             color: var(--light-text-color);
         }
+
+        /* --- CSS cho Hình ảnh Sản phẩm trong Bảng --- */
+.product-image-thumb {
+    width: 60px; /* Kích thước cố định cho hình thu nhỏ */
+    height: 60px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden; /* Cắt ảnh nếu ảnh quá lớn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; /* Hiệu ứng cho người dùng biết có thể tương tác */
+    transition: box-shadow 0.3s;
+}
+
+.product-image-thumb:hover {
+    box-shadow: 0 0 5px rgba(255, 193, 7, 0.5); /* Tạo bóng mờ màu vàng khi rê chuột */
+}
+
+.product-image-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh đầy đủ khung mà không bị biến dạng */
+}
     </style>
 </head>
 <body>
 
     <header class="admin-header">
-        <h1>Hệ Thống Quản Trị</h1>
+        <h1>Quản Lý Sản Phẩm</h1>
         <div class="logout-info">
             <span id="admin-user-info">Tài khoản: <strong>admin</strong> |</span>
             <a id="logoutLink" href="#">Đăng xuất</a>
@@ -254,129 +405,317 @@
     
     <div class="admin-layout">
         <nav class="sidebar">
-            <a href="admin-dashboard.html" class="active">Dashboard</a>
-            <a href="admin-users.html">Quản lý Người dùng</a>
-            <a href="admin-products.html">Quản lý Sản phẩm</a>
-            <a href="admin-imports.html">Quản lý Nhập hàng</a>
-            <a href="admin-prices.html">Quản lý Giá bán</a>
-            <a href="admin-orders.html">Quản lý Đơn hàng</a>
-            <a href="admin-inventory.html">Quản lý Tồn kho & Báo cáo</a>
+            <h3>Hệ thống quản lý</h3>
+            <a href="admin-dashboard.html">Dashboard</a>
+            <a href="admin-users.html">Người dùng</a>
+            <a href="admin-products.html" class="active">Sản phẩm</a>
+            <a href="admin-imports.html">Nhập hàng</a>
+            <a href="admin-prices.html">Giá bán</a>
+            <a href="admin-orders.html">Đơn hàng</a>
+            <a href="admin-inventory.html">Tồn kho & Báo cáo</a>
         </nav>
 
-    <div class="container">
-        <h1>Quản Lý Danh Mục Sản Phẩm</h1>
+        <div class="main-content">
 
-        <section id="add-category-section">
-            <h3>Thêm Loại Sản phẩm</h3>
-            <form>
-                <div class="form-group">
-                    <label for="category-name">Tên Loại Sản phẩm:</label>
-                    <input type="text" id="category-name" name="category-name" required>
-                </div>
-                <div class="form-group full-width">
-                    <label for="category-description">Mô tả Loại Sản phẩm:</label>
-                    <textarea id="category-description" name="category-description"></textarea>
-                </div>
-                <div class="action-buttons full-width">
-                    <button type="submit" class="btn-primary">Thêm Loại</button>
-                </div>
-            </form>
-        </section>
-
-        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 30px 0;">
-
-        <section id="add-product-section">
-            <h3>Thêm Sản phẩm Mới</h3>
-            <form>
-                <div class="form-group"><label for="product-code">Mã Sản phẩm:</label><input type="text" id="product-code" required></div>
-                <div class="form-group"><label for="product-name">Tên Sản phẩm:</label><input type="text" id="product-name" required></div>
-                
-                <div class="form-group"><label for="product-category">Loại Sản phẩm:</label><select id="product-category" required><option>-- Chọn Loại (Hoa Hồng)</option><option>Hoa Lan</option></select></div>
-                <div class="form-group"><label for="product-unit">Đơn vị tính:</label><input type="text" id="product-unit" placeholder="Bó/Cành/Lẵng" required></div>
-                
-                <div class="form-group"><label for="product-quantity">Số lượng:</label><input type="number" id="product-quantity" min="0" required></div>
-                <div class="form-group"><label for="product-supplier">Nhà cung cấp:</label><input type="text" id="product-supplier"></div>
-                
-                <div class="form-group"><label for="product-price">Giá bán đề xuất:</label><input type="number" id="product-price" min="0" required></div>
-                <div class="form-group"><label for="product-margin">Tỉ lệ lợi nhuận mong muốn (%):</label><input type="number" id="product-margin" min="0" max="100"></div>
-
-                <div class="form-group full-width"><label for="product-image">Hình ảnh:</label><input type="file" id="product-image" accept="image/*"></div>
-                <div class="form-group full-width"><label for="product-description">Mô tả:</label><textarea id="product-description"></textarea></div>
-
-                <div class="action-buttons full-width">
-                    <button type="submit" class="btn-primary">Thêm Sản phẩm</button>
-                </div>
-            </form>
-        </section>
-
-        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 30px 0;">
-
-        <section id="product-list-section">
-            <h3>Danh sách Sản phẩm Hiện tại</h3>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Mã</th>
-                        <th>Tên Sản phẩm</th>
-                        <th>Giá</th>
-                        <th>Hiện trạng</th>
-                        <th>Hành động</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>SP001</td>
-                        <td>Bó Hồng Đỏ Juliet</td>
-                        <td>550.000 VNĐ</td>
-                        <td><span class="status-badge status-selling">Đang bán</span></td>
-                        <td><button onclick="document.getElementById('edit-sp001').style.display='block';">Sửa</button></td>
-                    </tr>
-                    <tr>
-                        <td>SP002</td>
-                        <td>Lẵng Hoa Lan Hồ Điệp</td>
-                        <td>1.200.000 VNĐ</td>
-                        <td><span class="status-badge status-out">Hết hàng</span></td>
-                        <td><button onclick="document.getElementById('edit-sp002').style.display='block';">Sửa</button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <hr style="border: 0; border-top: 1px dashed #ccc; margin: 30px 0;">
-
-        <section id="edit-sp001" style="display: none;">
-            <h3>Sửa Sản phẩm: SP001 - Bó Hồng Đỏ Juliet</h3>
-            <form>
-                <div class="form-group full-width">
-                    <label>Quản lý Hình ảnh:</label>
-                    <div class="image-management">
-                        <div class="current-image">Ảnh cũ</div>
-                        <button type="button" class="btn-danger">🗑️ Bỏ Hình</button>
-                        <input type="file" style="width: auto;">
+            <div class="container">
+                <section id="add-category-section">
+                    <div class="card-title">
+                        <i class="fas fa-plus-circle" style="color: #ba3362; font-size: 20px;"></i>
+                        Thêm Loại Sản phẩm
                     </div>
-                </div>
-                
-                <div class="form-group"><label for="edit-price">Giá bán đề xuất:</label><input type="number" id="edit-price" value="550000"></div>
-                <div class="form-group"><label for="edit-margin">Tỉ lệ lợi nhuận (%):</label><input type="number" id="edit-margin" value="25"></div>
+                    <form>
+                        <div class="form-group">
+                            <label for="category-name">Tên Loại Sản phẩm:</label>
+                            <input type="text" id="category-name" name="category-name" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="category-description">Mô tả Loại Sản phẩm:</label>
+                            <textarea id="category-description" name="category-description"></textarea>
+                        </div>
+                        
+        <button class="btn-add-large">Thêm</button>
+   
+                    </form>
+                </section>
+            </div>
 
-                <div class="form-group"><label for="edit-quantity">Số lượng tồn:</label><input type="number" id="edit-quantity" value="15"></div>
+            <div class="container">
+                <section id="add-product-section">
+                    <div class="card-title">
+                        <i class="fas fa-plus-circle" style="color: #ba3362; font-size: 20px;"></i>
+                        Thêm Sản phẩm Mới
+                    </div>
+                    <form>
+                        <div class="form-group"><label for="product-code">Mã Sản phẩm:</label><input type="text" id="product-code" required></div>
+                        <div class="form-group"><label for="product-name">Tên Sản phẩm:</label><input type="text" id="product-name" required></div>
+                        
+                        <div class="form-group"><label for="product-category">Loại Sản phẩm:</label><select id="product-category" required><option>-- Chọn Loại (Hoa Hồng)</option><option>Hoa Lan</option></select></div>
+                        <div class="form-group"><label for="product-unit">Đơn vị tính:</label><input type="text" id="product-unit" placeholder="Bó/Cành/Lẵng" required></div>
+                        
+                        <div class="form-group"><label for="product-quantity">Số lượng:</label><input type="number" id="product-quantity" min="0" required></div>
+                        <div class="form-group"><label for="product-supplier">Nhà cung cấp:</label><input type="text" id="product-supplier"></div>
+                        
+                        <div class="form-group"><label for="product-price">Giá bán đề xuất:</label><input type="number" id="product-price" min="0" required></div>
+                        <div class="form-group"><label for="product-margin">Tỉ lệ lợi nhuận mong muốn (%):</label><input type="number" id="product-margin" min="0" max="100"></div>
 
-                <div class="form-group">
-                    <label for="edit-status">Hiện trạng:</label>
-                    <select id="edit-status" required>
-                        <option value="selling" selected>Đang bán</option>
-                        <option value="out-of-stock">Hết hàng</option>
-                        <option value="discontinued">Ngừng bán</option>
-                    </select>
-                </div>
 
-                <div class="action-buttons full-width">
-                    <button type="button" onclick="document.getElementById('edit-sp001').style.display='none';">Hủy</button>
-                    <button type="submit" class="btn-primary">Lưu Thay đổi</button>
-                </div>
-            </form>
-        </section>
+    <div class="grid-2-columns-row">
+    <div class="form-group align-bottom"> 
+        <label for="upload" class="file-label">
+            <i class="fas fa-upload"></i>
+            Chọn ảnh
+        </label>
+        <input type="file" id="upload" class="file-upload">
+    </div>
+    
+    <div class="form-group">
+        <label for="product-status">Trạng thái</label>
+        <select id="product-status">
+            <option value="selling" selected>Đang bán</option>
+            </select>
+    </div>
+</div>
+    
 
+
+                        <div class="form-group full-width">
+                <label for="product-description">Mô tả:</label>
+                <textarea id="product-description"></textarea>
+            </div>
+                        
+                          
+        <button class="btn-add-large">Thêm</button>
+ 
+                        
+                    </form>
+                </section>
+            </div>
+
+            <div class="container">
+                <section id="product-list-section">
+                    <div class="card-title">
+                        <i class="fas fa-list" style="color: #ba3362; font-size: 20px;"></i>
+                        Danh Sách Sản phẩm Hiện tại
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Mã</th>
+                                <th>Tên Sản phẩm</th>
+                                <th>Ảnh</th>
+                                <th>Loại sản phẩm</th>
+                                <th>Số lượng</th>
+                                <th>Lợi nhuận dự kiến</th>
+                                <th>Giá bán</th>
+                                <th>Hiện trạng</th>
+                                <th>Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>SP001</td>
+                                <td>Bó Hồng Đỏ Juliet</td>
+                                <td>
+                                    <div class="product-image-thumb" 
+                                        onclick="document.getElementById('edit-sp001').style.display='block';">
+                                        <img src="img/bohongjuliet.jpg" alt="Ảnh SP001">
+                                    </div>
+                                </td>
+                                <td>Hoa Hồng</td>
+                                <td>20 Bó</td>
+                                <td>22,5%</td>
+                                <td>550.000 VNĐ</td>
+                                <td><span class="status-badge status-out">Hết hàng</span></td>
+                                <td><button onclick="document.getElementById('edit-sp001').style.display='block';">Chỉnh sửa</button></td>
+                            </tr>
+                            <tr>
+                                <td>SP002</td>
+                                <td>Lẵng Hoa Lan Hồ Điệp</td>
+                                 <td>
+                                    <div class="product-image-thumb" 
+                                        onclick="document.getElementById('edit-sp001').style.display='block';">
+                                        <img src="img/langhoahodiep.jpg" alt="Ảnh SP002">
+                                    </div>
+                                </td>
+                                <td>Lẵng Hoa</td>
+                                <td>10 Lẵng</td>
+                                <td>25%</td>
+                                <td>1.200.000 VNĐ</td>
+                                <td><span class="status-badge status-out">Hết hàng</span></td>
+                                <td><button onclick="document.getElementById('edit-sp002').style.display='block';">Chỉnh sửa</button></td>
+                            </tr>
+                             <tr>
+                                <td>SP003</td>
+                                <td>Cúc Bách Nhật</td>
+                                <td>
+                                    <div class="product-image-thumb" 
+                                        onclick="document.getElementById('edit-sp001').style.display='block';">
+                                        <img src="img/cucbachnhat.jpg" alt="Ảnh SP001">
+                                    </div>
+                                </td>
+                                <td>Hoa Cúc</td>
+                                <td>25 Bó</td>
+                                <td>18%</td>
+                                <td>300.000 VNĐ</td>
+                                <td><span class="status-badge status-selling">Đang bán</span></td>
+                                <td><button onclick="document.getElementById('edit-sp001').style.display='block';">Chỉnh sửa</button></td>
+                            </tr>
+                             <tr>
+                                <td>SP004</td>
+                                <td>Kim Cát Hoa</td>
+                                <td>
+                                    <div class="product-image-thumb" 
+                                        onclick="document.getElementById('edit-sp001').style.display='block';">
+                                        <img src="img/kimcat.jpg" alt="Ảnh SP001">
+                                    </div>
+                                </td>
+                                <td>Hoa Hồng</td>
+                                <td>20 Bó</td>
+                                <td>19%</td>
+                                <td>350.000 VNĐ</td>
+                                <td><span class="status-badge status-selling">Đang bán</span></td>
+                                <td><button onclick="document.getElementById('edit-sp001').style.display='block';">Chỉnh sửa</button></td>
+                            </tr>
+                             <tr>
+                                <td>SP005</td>
+                                <td>Đồng Tiền</td>
+                                <td>
+                                    <div class="product-image-thumb" 
+                                        onclick="document.getElementById('edit-sp001').style.display='block';">
+                                        <img src="img/dongtien.jpg" alt="Ảnh SP001">
+                                    </div>
+                                </td>
+                                <td>Hoa Cúc</td>
+                                <td>25 Bó</td>
+                                <td>18,5%</td>
+                                <td>400.000 VNĐ</td>
+                                <td><span class="status-badge status-selling">Đang bán</span></td>
+                                <td><button onclick="document.getElementById('edit-sp001').style.display='block';">Chỉnh sửa</button></td>
+                            </tr> 
+                            <tr>
+                                <td>SP006</td>
+                                <td>Xuân Sắc Hoa</td>
+                                <td>
+                                    <div class="product-image-thumb" 
+                                        onclick="document.getElementById('edit-sp001').style.display='block';">
+                                        <img src="img/xuansac.jpg" alt="Ảnh SP001">
+                                    </div>
+                                </td>
+                                <td>Hoa Hồng</td>
+                                <td>20 Bó</td>
+                                <td>18%</td>
+                                <td>400.000 VNĐ</td>
+                                <td><span class="status-badge status-selling">Đang bán</span></td>
+                                <td><button onclick="document.getElementById('edit-sp001').style.display='block';">Chỉnh sửa</button></td>
+                            </tr>
+                            <tr>
+                                <td>SP007</td>
+                                <td>Strawberry Vani Cheese</td>
+                                <td>
+                                    <div class="product-image-thumb" 
+                                        onclick="document.getElementById('edit-sp001').style.display='block';">
+                                        <img src="img/banhkem.jpg" alt="Ảnh SP001">
+                                    </div>
+                                </td>
+                                <td>Bánh Kem</td>
+                                <td>20 Cái</td>
+                                <td>24%</td>
+                                <td>380.000 VNĐ</td>
+                                <td><span class="status-badge status-selling">Đang bán</span></td>
+                                <td><button onclick="document.getElementById('edit-sp001').style.display='block';">Chỉnh sửa</button></td>
+                            </tr>
+                            <tr>
+                                <td>SP008</td>
+                                <td>Teddy Bear</td>
+                                <td>
+                                    <div class="product-image-thumb" 
+                                        onclick="document.getElementById('edit-sp001').style.display='block';">
+                                        <img src="img/gaubong.jpg" alt="Ảnh SP001">
+                                    </div>
+                                </td>
+                                <td>Gấu Bông</td>
+                                <td>25 Con</td>
+                                <td>15%</td>
+                                <td>150.000 VNĐ</td>
+                                <td><span class="status-badge status-selling">Đang bán</span></td>
+                                <td><button onclick="document.getElementById('edit-sp001').style.display='block';">Chỉnh sửa</button></td>
+                            </tr>
+                            <tr>
+                                <td>SP009</td>
+                                <td>Chanh Lạp Hoa</td>
+                                <td>
+                                    <div class="product-image-thumb" 
+                                        onclick="document.getElementById('edit-sp001').style.display='block';">
+                                        <img src="img/chanhlap.jpg" alt="Ảnh SP001">
+                                    </div>
+                                </td>
+                                <td>Hoa Hồng</td>
+                                <td>30 Bó</td>
+                                <td>19%</td>
+                                <td>500.000 VNĐ</td>
+                                <td><span class="status-badge status-selling">Đang bán</span></td>
+                                <td><button onclick="document.getElementById('edit-sp001').style.display='block';">Chỉnh sửa</button></td>
+                            </tr>
+                            <tr>
+                                <td>SP0010</td>
+                                <td>Hỉ Lan Hoa</td>
+                                <td>
+                                    <div class="product-image-thumb" 
+                                        onclick="document.getElementById('edit-sp001').style.display='block';">
+                                        <img src="img/giohoa.jpg" alt="Ảnh SP001">
+                                    </div>
+                                </td>
+                                <td>Giỏ Hoa</td>
+                                <td>20 Giỏ</td>
+                                <td>20%</td>
+                                <td>650.000 VNĐ</td>
+                                <td><span class="status-badge status-selling">Đang bán</span></td>
+                                <td><button onclick="document.getElementById('edit-sp001').style.display='block';">Chỉnh sửa</button></td>
+                            </tr>
+                            
+                            
+                            
+                            
+                        </tbody>
+                    </table>
+                </section>
+            
+                <section id="edit-sp001" style="display: none; padding-top: 20px;">
+                    <hr style="border: 0; border-top: 1px dashed #ccc; margin: 30px 0;">
+                    <h3>Sửa Sản phẩm: SP001 - Bó Hồng Đỏ Juliet</h3>
+                    <form>
+                        <div class="form-group full-width">
+                            <label>Quản lý Hình ảnh:</label>
+                            <div class="image-management">
+                                <div class="current-image">Ảnh cũ</div>
+                                <button type="button" class="btn-danger">🗑️ Bỏ Hình</button>
+                                <input type="file" style="width: auto;">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group"><label for="edit-price">Giá bán đề xuất:</label><input type="number" id="edit-price" value="550000"></div>
+                        <div class="form-group"><label for="edit-margin">Tỉ lệ lợi nhuận (%):</label><input type="number" id="edit-margin" value="25"></div>
+
+                        <div class="form-group"><label for="edit-quantity">Số lượng tồn:</label><input type="number" id="edit-quantity" value="15"></div>
+
+                        <div class="form-group">
+                            <label for="edit-status">Hiện trạng:</label>
+                            <select id="edit-status" required>
+                                <option value="selling" selected>Đang bán</option>
+                                <option value="out-of-stock">Hết hàng</option>
+                                <option value="discontinued">Ngừng bán</option>
+                            </select>
+                        </div>
+
+                        <div class="action-buttons full-width">
+                            <button type="button" onclick="document.getElementById('edit-sp001').style.display='none';">Hủy</button>
+                            <button type="submit" class="btn-primary">Lưu Thay đổi</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+            
+        </div>
     </div>
 
 </body>
